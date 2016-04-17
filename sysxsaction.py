@@ -1,4 +1,4 @@
-# coding: gb2312
+# coding: utf-8
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
@@ -8,7 +8,7 @@ import time,os
 
 
 class SysXSAdmin(object):
-    ''' Æô¶¯ä¯ÀÀÆ÷ '''
+    ''' å¯åŠ¨æµè§ˆå™¨ '''
     def __init__(self,browser='ff'):
         if browser == "firefox" or browser=="ff":
             driver = webdriver.Firefox()
@@ -24,958 +24,958 @@ class SysXSAdmin(object):
             self.driver = driver
         except Exception:
             raise NameError("Not found %s browser,You can enter 'ie', 'ff' or 'chrome'." %browser)
-        print('Æô¶¯ä¯ÀÀÆ÷')
-    # urlµØÖ·
+        print('å¯åŠ¨æµè§ˆå™¨')
+    # urlåœ°å€
     def UrlOpen(self,url):
         self.driver.maximize_window()
         self.driver.get(url) # Load page
-    # ¹Ø±Õä¯ÀÀÆ÷
+    # å…³é—­æµè§ˆå™¨
     def Quitbrow(self):
         self.driver.quit()  # Quit Browser
-    # µÇÂ¼ÏµÍ³ºóÌ¨
+    # ç™»å½•ç³»ç»Ÿåå°
     def SysLogin(self,user,pwd,verify):
         self.driver.find_element_by_class_name("adm_name").send_keys(user)  # Input User name
         self.driver.find_element_by_class_name("adm_password").send_keys(pwd)  # Input password
         self.driver.find_element_by_name("adm_verify").send_keys(verify)  # Input verify
         self.driver.find_element_by_id("login_btn").click()
-        print('ÏµÍ³ºóÌ¨µÇÂ¼')
-    # ÓÃÓÚ²Ù×÷menu²Ëµ¥
+        print('ç³»ç»Ÿåå°ç™»å½•')
+    # ç”¨äºæ“ä½œmenuèœå•
     def MenuTpye(self,listnum):
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[1]/a").click()  # µã»÷ÏµÍ³Ê×Ò³
-            print('ºóÌ¨ÏµÍ³Ê×Ò³')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[1]/a").click()  # ç‚¹å‡»ç³»ç»Ÿé¦–é¡µ
+            print('åå°ç³»ç»Ÿé¦–é¡µ')
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[2]/a").click()  # µã»÷´û¿î¹ÜÀí
-            print('´û¿î¹ÜÀí')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[2]/a").click()  # ç‚¹å‡»è´·æ¬¾ç®¡ç†
+            print('è´·æ¬¾ç®¡ç†')
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[3]/a").click()  # µã»÷»áÔ±¹ÜÀí
-            print('»áÔ±¹ÜÀí')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[3]/a").click()  # ç‚¹å‡»ä¼šå‘˜ç®¡ç†
+            print('ä¼šå‘˜ç®¡ç†')
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[4]/a").click()  # µã»÷×Ê½ğ¹ÜÀí
-            print('×Ê½ğ¹ÜÀí')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[4]/a").click()  # ç‚¹å‡»èµ„é‡‘ç®¡ç†
+            print('èµ„é‡‘ç®¡ç†')
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[5]/a").click()  # µã»÷´ı°ìÊÂÎï
-            print('´ı°ìÊÂÎï')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[5]/a").click()  # ç‚¹å‡»å¾…åŠäº‹ç‰©
+            print('å¾…åŠäº‹ç‰©')
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[6]/a").click()  # µã»÷Í³¼ÆÄ£¿é
-            print('Í³¼ÆÄ£¿é')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[6]/a").click()  # ç‚¹å‡»ç»Ÿè®¡æ¨¡å—
+            print('ç»Ÿè®¡æ¨¡å—')
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[7]/a").click()  # µã»÷²¿ÃÅ¹ÜÀí
-            print('²¿ÃÅ¹ÜÀí')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[7]/a").click()  # ç‚¹å‡»éƒ¨é—¨ç®¡ç†
+            print('éƒ¨é—¨ç®¡ç†')
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[8]/a").click()  # µã»÷³ÇÊĞºÏ»ïÈË
-            print('³ÇÊĞºÏ»ïÈË')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[8]/a").click()  # ç‚¹å‡»åŸå¸‚åˆä¼™äºº
+            print('åŸå¸‚åˆä¼™äºº')
         elif listnum == "9":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[9]/a").click()  # µã»÷»ı·ÖÉÌ³Ç
-            print('»ı·ÖÉÌ³Ç')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[9]/a").click()  # ç‚¹å‡»ç§¯åˆ†å•†åŸ
+            print('ç§¯åˆ†å•†åŸ')
         elif listnum == "10":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[10]/a").click()  # µã»÷Ç°¶ËÉèÖÃ
-            print('Ç°¶ËÉèÖÃ')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[10]/a").click()  # ç‚¹å‡»å‰ç«¯è®¾ç½®
+            print('å‰ç«¯è®¾ç½®')
         elif listnum == "11":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[11]/a").click()  # µã»÷»î¶¯ÓëÍÆ¹ã
-            print('»î¶¯ÓëÍÆ¹ã')
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[11]/a").click()  # ç‚¹å‡»æ´»åŠ¨ä¸æ¨å¹¿
+            print('æ´»åŠ¨ä¸æ¨å¹¿')
         elif listnum == "12":
-            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[12]/a").click()  # µã»÷ÏµÍ³ÉèÖÃ
-            print('ÏµÍ³ÉèÖÃ')
-    # ÓÃÓÚ²Ù×÷´û¿î¹ÜÀí²Ëµ¥ÏÂµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/div[4]/ul/li[12]/a").click()  # ç‚¹å‡»ç³»ç»Ÿè®¾ç½®
+            print('ç³»ç»Ÿè®¾ç½®')
+    # ç”¨äºæ“ä½œè´·æ¬¾ç®¡ç†èœå•ä¸‹çš„å­èœå•
     def LoanMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷´û¿î¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»è´·æ¬¾ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷È«²¿´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»å…¨éƒ¨è´·æ¬¾
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷Ô¤¸æÖĞ´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»é¢„å‘Šä¸­è´·æ¬¾
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷ĞÂÊÖ´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»æ–°æ‰‹è´·æ¬¾
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷´û¿î»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»è´·æ¬¾å›æ”¶ç«™
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # µã»÷ÉóºËÈÕÖ¾ÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÉóºË¹ÜÀíÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # ç‚¹å‡»å®¡æ ¸æ—¥å¿—åˆ—è¡¨
+    # ç”¨äºæ“ä½œå®¡æ ¸ç®¡ç†ä¸‹é¢çš„å­èœå•
     def DealMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷ÉóºË¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»å®¡æ ¸ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷Ê×µ¥´ıÉóºËÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»é¦–å•å¾…å®¡æ ¸åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷Ğø½è´ıÉóºËÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»ç»­å€Ÿå¾…å®¡æ ¸åˆ—è¡¨
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # µã»÷ÎÒµÄ´ıÉóºËÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # ç‚¹å‡»æˆ‘çš„å¾…å®¡æ ¸åˆ—è¡¨
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # µã»÷¸´ÉóºËÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # ç‚¹å‡»å¤å®¡æ ¸åˆ—è¡¨
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # µã»÷Î´Âú±ê´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # ç‚¹å‡»æœªæ»¡æ ‡è´·æ¬¾
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # µã»÷¹ıÆÚµÄ´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # ç‚¹å‡»è¿‡æœŸçš„è´·æ¬¾
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # µã»÷Á÷±êµÄ´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # ç‚¹å‡»æµæ ‡çš„è´·æ¬¾
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # µã»÷ÉóºËÊ§°ÜµÄ´û¿î
-    # ÓÃÓÚ²Ù×÷Âú±ê¹ÜÀíÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # ç‚¹å‡»å®¡æ ¸å¤±è´¥çš„è´·æ¬¾
+    # ç”¨äºæ“ä½œæ»¡æ ‡ç®¡ç†ä¸‹é¢çš„å­èœå•
     def FundDeal(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷Âú±ê¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»æ»¡æ ‡ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # µã»÷Âú±ê´ı·Å¿î
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # ç‚¹å‡»æ»¡æ ‡å¾…æ”¾æ¬¾
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # µã»÷»¹¿îÖĞ´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # ç‚¹å‡»è¿˜æ¬¾ä¸­è´·æ¬¾
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # µã»÷ÒÑÍê³É´û¿î
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # ç‚¹å‡»å·²å®Œæˆè´·æ¬¾
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # µã»÷ÌáÇ°»¹´û¿î
-    # ÓÃÓÚ²Ù×÷±£Ö¤½ğ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # ç‚¹å‡»æå‰è¿˜è´·æ¬¾
+    # ç”¨äºæ“ä½œä¿è¯é‡‘ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def Bmoney(self,listmun):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷±£Ö¤½ğ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»ä¿è¯é‡‘ç®¡ç†
         if listmun == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click() # µã»÷´ı·µ»¹
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click() # ç‚¹å‡»å¾…è¿”è¿˜
         elif listmun == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # µã»÷ÒÑ·µ»¹
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # ç‚¹å‡»å·²è¿”è¿˜
         elif listmun == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # µã»÷ÓĞÓâÆÚ
-    # ÓÃÓÚ²Ù×÷´ßÊÕ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # ç‚¹å‡»æœ‰é€¾æœŸ
+    # ç”¨äºæ“ä½œå‚¬æ”¶ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def CollMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # µã»÷´ßÊÕ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # ç‚¹å‡»å‚¬æ”¶ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # µã»÷´ı´ßÊÕÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # ç‚¹å‡»å¾…å‚¬æ”¶åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # µã»÷´ı´ßÊÕÆÚÃ÷Ï¸
-    # ÓÃÓÚ²Ù×÷½è´û¼ÇÂ¼²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # ç‚¹å‡»å¾…å‚¬æ”¶æœŸæ˜ç»†
+    # ç”¨äºæ“ä½œå€Ÿè´·è®°å½•èœå•ä¸‹é¢çš„å­èœå•
     def DealLog(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # µã»÷½è´û¼ÇÂ¼
+        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # ç‚¹å‡»å€Ÿè´·è®°å½•
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # µã»÷´ı»¹¿îÕËµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # ç‚¹å‡»å¾…è¿˜æ¬¾è´¦å•
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # µã»÷ÓâÆÚ´ıÊÕ¿î
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # ç‚¹å‡»é€¾æœŸå¾…æ”¶æ¬¾
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]/a").click()  # µã»÷ÍøÕ¾µæ¸¶¿î
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]/a").click()  # ç‚¹å‡»ç½‘ç«™å«ä»˜æ¬¾
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[4]/a").click()  # µã»÷ÊÕ¿îĞÅÏ¢
-    # ÓÃÓÚ²Ù×÷Í¶±êĞÅÏ¢²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[4]/a").click()  # ç‚¹å‡»æ”¶æ¬¾ä¿¡æ¯
+    # ç”¨äºæ“ä½œæŠ•æ ‡ä¿¡æ¯èœå•ä¸‹é¢çš„å­èœå•
     def DealInfo(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click()  # µã»÷Í¶±êĞÅÏ¢
+        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click()  # ç‚¹å‡»æŠ•æ ‡ä¿¡æ¯
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # µã»÷ËùÓĞÍ¶±ê
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # ç‚¹å‡»æ‰€æœ‰æŠ•æ ‡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # µã»÷ÊÖ¶¯Í¶±ê
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # ç‚¹å‡»æ‰‹åŠ¨æŠ•æ ‡
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[3]/a").click()  # µã»÷×Ô¶¯Í¶±ê
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[3]/a").click()  # ç‚¹å‡»è‡ªåŠ¨æŠ•æ ‡
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[4]/a").click()  # µã»÷³É¹¦µÄÍ¶±ê
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[4]/a").click()  # ç‚¹å‡»æˆåŠŸçš„æŠ•æ ‡
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # µã»÷Ê§°ÜµÄÍ¶±ê
-    # ÓÃÓÚ²Ù×÷Õ®È¨×ªÈÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # ç‚¹å‡»å¤±è´¥çš„æŠ•æ ‡
+    # ç”¨äºæ“ä½œå€ºæƒè½¬è®©èœå•ä¸‹é¢çš„å­èœå•
     def Transfer(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # µã»÷Õ®È¨×ªÈÃ
+        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # ç‚¹å‡»å€ºæƒè½¬è®©
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # µã»÷ËùÓĞ×ªÈÃ
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # ç‚¹å‡»æ‰€æœ‰è½¬è®©
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # µã»÷ÕıÔÚ×ªÈÃ
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # ç‚¹å‡»æ­£åœ¨è½¬è®©
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[3]/a").click()  # µã»÷³É¹¦×ªÈÃ
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[3]/a").click()  # ç‚¹å‡»æˆåŠŸè½¬è®©
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[4]/a").click()  # µã»÷³·Ïú×ªÈÃ
-    # ÓÃÓÚ²Ù×÷ÁôÑÔÊ½´û¿îÉêÇë²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[4]/a").click()  # ç‚¹å‡»æ’¤é”€è½¬è®©
+    # ç”¨äºæ“ä½œç•™è¨€å¼è´·æ¬¾ç”³è¯·èœå•ä¸‹é¢çš„å­èœå•
     def MsgDeal(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # µã»÷ÁôÑÔÊ½´û¿îÉêÇë
+        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # ç‚¹å‡»ç•™è¨€å¼è´·æ¬¾ç”³è¯·
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[9]/dd/a").click()  # µã»÷ÁôÑÔÊ½´û¿îÉêÇë
+            self.driver.find_element_by_xpath("/html/body/dl[9]/dd/a").click()  # ç‚¹å‡»ç•™è¨€å¼è´·æ¬¾ç”³è¯·
         try:
            if listnum <= "0":
                print("error")
         except Exception:
             raise NameError("Not found %s listnum,You can enter '1'....." %listnum)
-    # ÓÃÓÚ²Ù×÷ÁôÑÔ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+    # ç”¨äºæ“ä½œç•™è¨€ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def MsgMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[10]/dt").click()  # µã»÷ÁôÑÔ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[10]/dt").click()  # ç‚¹å‡»ç•™è¨€ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[10]/dd/a").click()  # µã»÷ÁôÑÔÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÒµÎñÔ±²éÑ¯²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[10]/dd/a").click()  # ç‚¹å‡»ç•™è¨€åˆ—è¡¨
+    # ç”¨äºæ“ä½œä¸šåŠ¡å‘˜æŸ¥è¯¢èœå•ä¸‹é¢çš„å­èœå•
     def BusMan(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[11]/dt").click()  # µã»÷ÒµÎñÔ±²éÑ¯
+        self.driver.find_element_by_xpath("/html/body/dl[11]/dt").click()  # ç‚¹å‡»ä¸šåŠ¡å‘˜æŸ¥è¯¢
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[11]/dd[1]/a").click()  # µã»÷ÍÆ¼öÈË²éÑ¯
+            self.driver.find_element_by_xpath("/html/body/dl[11]/dd[1]/a").click()  # ç‚¹å‡»æ¨èäººæŸ¥è¯¢
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[11]/dd[2]/a").click()  # µã»÷´ıÉóºË²éÑ¯
-    # ÓÃÓÚ²Ù×÷ÆÕÍ¨»áÔ±²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[11]/dd[2]/a").click()  # ç‚¹å‡»å¾…å®¡æ ¸æŸ¥è¯¢
+    # ç”¨äºæ“ä½œæ™®é€šä¼šå‘˜èœå•ä¸‹é¢çš„å­èœå•
     def User(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷ÆÕÍ¨»áÔ±
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»æ™®é€šä¼šå‘˜
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷ÆÕÍ¨ÓÃ»§
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»æ™®é€šç”¨æˆ·
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷½è¿îÓÃ»§
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾ç”¨æˆ·
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷Àí²ÆÓÃ»§
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»ç†è´¢ç”¨æˆ·
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷¾¯¸æÃûµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»è­¦å‘Šåå•
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # µã»÷Ğ¡Ê÷ºÚÃûµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # ç‚¹å‡»å°æ ‘é»‘åå•
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # µã»÷Íø´ûºÚÃûµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # ç‚¹å‡»ç½‘è´·é»‘åå•
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # µã»÷´ıÉóºË»áÔ±
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # ç‚¹å‡»å¾…å®¡æ ¸ä¼šå‘˜
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # µã»÷»áÔ±ĞÅÏ¢
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # ç‚¹å‡»ä¼šå‘˜ä¿¡æ¯
         elif listnum == "9":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[9]/a").click()  # µã»÷»áÔ±»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷ÆóÒµ»áÔ±²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[9]/a").click()  # ç‚¹å‡»ä¼šå‘˜å›æ”¶ç«™
+    # ç”¨äºæ“ä½œä¼ä¸šä¼šå‘˜èœå•ä¸‹é¢çš„å­èœå•
     def UesrCompany(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click() # µã»÷ÆóÒµ»áÔ±
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click() # ç‚¹å‡»ä¼ä¸šä¼šå‘˜
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷ÆóÒµ»áÔ±
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»ä¼ä¸šä¼šå‘˜
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷»áÔ±ºÚÃûµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»ä¼šå‘˜é»‘åå•
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # µã»÷´ıÉóºË»áÔ±
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # ç‚¹å‡»å¾…å®¡æ ¸ä¼šå‘˜
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # µã»÷»áÔ±ĞÅÏ¢
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # ç‚¹å‡»ä¼šå‘˜ä¿¡æ¯
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # µã»÷»áÔ±»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷µ£±£»ú¹¹²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # ç‚¹å‡»ä¼šå‘˜å›æ”¶ç«™
+    # ç”¨äºæ“ä½œæ‹…ä¿æœºæ„èœå•ä¸‹é¢çš„å­èœå•
     def DealAgency(self,liestnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷µ£±£»ú¹¹
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»æ‹…ä¿æœºæ„
         if liestnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # µã»÷µ£±£»ú¹¹
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # ç‚¹å‡»æ‹…ä¿æœºæ„
         elif liestnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # µã»÷µ£±£»ú¹¹»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷ÆäËûĞÅÏ¢²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # ç‚¹å‡»æ‹…ä¿æœºæ„å›æ”¶ç«™
+    # ç”¨äºæ“ä½œå…¶ä»–ä¿¡æ¯èœå•ä¸‹é¢çš„å­èœå•
     def CompanyManage(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷ÆäËûĞÅÏ¢
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»å…¶ä»–ä¿¡æ¯
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # µã»÷¹«Ë¾ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # ç‚¹å‡»å…¬å¸åˆ—è¡¨
         elif listnum =="2":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # µã»÷¹¤×÷ĞÅÏ¢
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # ç‚¹å‡»å·¥ä½œä¿¡æ¯
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # µã»÷ÒøĞĞ¿¨ÁĞ±í
-    # ÓÃÓÚ²Ù×÷ºì°ü¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # ç‚¹å‡»é“¶è¡Œå¡åˆ—è¡¨
+    # ç”¨äºæ“ä½œçº¢åŒ…ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def EcvMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # µã»÷ ºì°ü¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # ç‚¹å‡» çº¢åŒ…ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd/a")  # µã»÷ºì°üÀàĞÍ
-    # ÓÃÓÚ²Ù×÷Ïà¹ØÅäÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd/a")  # ç‚¹å‡»çº¢åŒ…ç±»å‹
+    # ç”¨äºæ“ä½œç›¸å…³é…ç½®èœå•ä¸‹é¢çš„å­èœå•
     def AboutConfig(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # µã»÷Ïà¹ØÅäÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # ç‚¹å‡»ç›¸å…³é…ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # µã»÷»áÔ±×Ö¶ÎÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # ç‚¹å‡»ä¼šå‘˜å­—æ®µåˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # µã»÷ĞÅÓÃµÈ¼¶ÁĞ±í
-    # ÓÃÓÚ²Ù×÷Õ¾ÄÚÏûÏ¢²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # ç‚¹å‡»ä¿¡ç”¨ç­‰çº§åˆ—è¡¨
+    # ç”¨äºæ“ä½œç«™å†…æ¶ˆæ¯èœå•ä¸‹é¢çš„å­èœå•
     def MsgSystem(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click()  # µã»÷Õ¾ÄÚÏûÏ¢
+        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click()  # ç‚¹å‡»ç«™å†…æ¶ˆæ¯
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # µã»÷ÏûÏ¢Èº·¢
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # ç‚¹å‡»æ¶ˆæ¯ç¾¤å‘
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # µã»÷ÏûÏ¢ÁĞ±í
-    # ÓÃÓÚ²Ù×÷VIPÌØÈ¨²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # ç‚¹å‡»æ¶ˆæ¯åˆ—è¡¨
+    # ç”¨äºæ“ä½œVIPç‰¹æƒèœå•ä¸‹é¢çš„å­èœå•
     def VipPrivilege(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # µã»÷VIPÌØÈ¨
+        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # ç‚¹å‡»VIPç‰¹æƒ
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # µã»÷VIP»áÔ±ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # ç‚¹å‡»VIPä¼šå‘˜åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # µã»÷VIPµÈ¼¶
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # ç‚¹å‡»VIPç­‰çº§
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[3]/a").click()  # µã»÷VIPÅäÖÃÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[3]/a").click()  # ç‚¹å‡»VIPé…ç½®åˆ—è¡¨
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[4]/a").click()  # µã»÷VIPÅäÖÃ»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[4]/a").click()  # ç‚¹å‡»VIPé…ç½®å›æ”¶ç«™
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[5]/a").click()  # µã»÷VIPÉı¼¶¼ÇÂ¼
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[5]/a").click()  # ç‚¹å‡»VIPå‡çº§è®°å½•
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[6]/a").click() # µã»÷VIP½µ¼¶¼ÇÂ¼
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[6]/a").click() # ç‚¹å‡»VIPé™çº§è®°å½•
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[7]/a").click()  # µã»÷VIP¹ºÂòÈÕÖ¾
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[7]/a").click()  # ç‚¹å‡»VIPè´­ä¹°æ—¥å¿—
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[8]/a").click()  # µã»÷¿Í·şÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[8]/a").click()  # ç‚¹å‡»å®¢æœåˆ—è¡¨
         elif listnum == "9":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[9]/a").click()  # µã»÷¿Í·ş»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷Í¶×Ê½±Àø²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[9]/a").click()  # ç‚¹å‡»å®¢æœå›æ”¶ç«™
+    # ç”¨äºæ“ä½œæŠ•èµ„å¥–åŠ±èœå•ä¸‹é¢çš„å­èœå•
     def VipGift(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # µã»÷Í¶×Ê½±Àø
+        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # ç‚¹å‡»æŠ•èµ„å¥–åŠ±
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[1]/a").click()  # µã»÷½±Àø·¢·ÅÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[1]/a").click()  # ç‚¹å‡»å¥–åŠ±å‘æ”¾åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[2]/a").click()  # µã»÷ÀñÆ·¹ÜÀí
+            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[2]/a").click()  # ç‚¹å‡»ç¤¼å“ç®¡ç†
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[3]/a").click()  # µã»÷·ÇÌáÏÖ½ğ¹ÜÀí
-    # ÓÃÓÚ²Ù×÷½ÚÈÕ¸£Àû²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[9]/dd[3]/a").click()  # ç‚¹å‡»éæç°é‡‘ç®¡ç†
+    # ç”¨äºæ“ä½œèŠ‚æ—¥ç¦åˆ©èœå•ä¸‹é¢çš„å­èœå•
     def VipFestivals(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[10]/dt").click()  # µã»÷½ÚÈÕ¸£Àû
+        self.driver.find_element_by_xpath("/html/body/dl[10]/dt").click()  # ç‚¹å‡»èŠ‚æ—¥ç¦åˆ©
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[1]/a").click()  # µã»÷½ÚÈÕ»ı·Ö±í
+            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[1]/a").click()  # ç‚¹å‡»èŠ‚æ—¥ç§¯åˆ†è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[2]/a").click()  # µã»÷¸£Àû·¢·ÅÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[2]/a").click()  # ç‚¹å‡»ç¦åˆ©å‘æ”¾åˆ—è¡¨
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[3]/a").click()  # µã»÷»ı·ÖÍÑÏÖ
-    # ÓÃÓÚ²Ù×÷ĞøÔ¼ÉêÇë²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[10]/dd[3]/a").click()  # ç‚¹å‡»ç§¯åˆ†è„±ç°
+    # ç”¨äºæ“ä½œç»­çº¦ç”³è¯·èœå•ä¸‹é¢çš„å­èœå•
     def GenerationRepay(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷ĞøÔ¼ÉêÇë
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»ç»­çº¦ç”³è¯·
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd/a").click()  # µã»÷ĞøÔ¼ÉêÇë×Ó²Ëµ¥
-    # ÓÃÓÚ²Ù×÷ÊÚĞÅ¶î¶ÈÉêÇë²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd/a").click()  # ç‚¹å‡»ç»­çº¦ç”³è¯·å­èœå•
+    # ç”¨äºæ“ä½œæˆä¿¡é¢åº¦ç”³è¯·èœå•ä¸‹é¢çš„å­èœå•
     def DealQuota(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷ÊÚĞÅ¶î¶ÈÉêÇë
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»æˆä¿¡é¢åº¦ç”³è¯·
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd/a").click()  # µã»÷ÉêÇëÁĞ±í×Ó²Ëµ¥
-    # ÓÃÓÚ²Ù×÷ĞÅÓÃ¶î¶ÈÉêÇë²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd/a").click()  # ç‚¹å‡»ç”³è¯·åˆ—è¡¨å­èœå•
+    # ç”¨äºæ“ä½œä¿¡ç”¨é¢åº¦ç”³è¯·èœå•ä¸‹é¢çš„å­èœå•
     def Quota(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷ĞÅÓÃ¶î¶ÈÉêÇë
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»ä¿¡ç”¨é¢åº¦ç”³è¯·
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd/a").click()  # µã»÷ÉêÇëÁĞ±í
-    # ÓÃÓÚ²Ù×÷¾Ù±¨¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd/a").click()  # ç‚¹å‡»ç”³è¯·åˆ—è¡¨
+    # ç”¨äºæ“ä½œä¸¾æŠ¥ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def Reportguy(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷¾Ù±¨¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»ä¸¾æŠ¥ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd/a").click()  # µã»÷¾Ù±¨ÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÈÏÖ¤¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd/a").click()  # ç‚¹å‡»ä¸¾æŠ¥åˆ—è¡¨
+    # ç”¨äºæ“ä½œè®¤è¯ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def CreditMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # µã»÷ÈÏÖ¤¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # ç‚¹å‡»è®¤è¯ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # µã»÷ËùÓĞÈÏÖ¤
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # ç‚¹å‡»æ‰€æœ‰è®¤è¯
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # µã»÷´ıÉóºËµÄÈÏÖ¤
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # ç‚¹å‡»å¾…å®¡æ ¸çš„è®¤è¯
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[3]/a").click()  # µã»÷Í¨¹ıµÄÈÏÖ¤
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[3]/a").click()  # ç‚¹å‡»é€šè¿‡çš„è®¤è¯
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[4]/a").click()  # µã»÷Ê§°ÜµÄÈÏÖ¤
-    # ÓÃÓÚ²Ù×÷»áÔ±·µÀû²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[4]/a").click()  # ç‚¹å‡»å¤±è´¥çš„è®¤è¯
+    # ç”¨äºæ“ä½œä¼šå‘˜è¿”åˆ©èœå•ä¸‹é¢çš„å­èœå•
     def Referrals(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # µã»÷»áÔ±·µÀû
+        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # ç‚¹å‡»ä¼šå‘˜è¿”åˆ©
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # µã»÷ÑûÇë·µÀûÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]/a").click()  # ç‚¹å‡»é‚€è¯·è¿”åˆ©åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # µã»÷½¨Á¢¹ØÁª
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]/a").click()  # ç‚¹å‡»å»ºç«‹å…³è”
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]/a").click()  # µã»÷ÍÆ¹ãÈËÁĞ±í
-    # ÓÃÓÚ²Ù×÷½è³öÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]/a").click()  # ç‚¹å‡»æ¨å¹¿äººåˆ—è¡¨
+    # ç”¨äºæ“ä½œå€Ÿå‡ºç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def StatisticsBorrow(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷½è³öÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»å€Ÿå‡ºç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷½è³ö×ÜÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»å€Ÿå‡ºæ€»ç»Ÿè®¡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷Í¶×ÊÈËÊı
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»æŠ•èµ„äººæ•°
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷Í¶×Ê½ğ¶î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»æŠ•èµ„é‡‘é¢
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷±êÖÖÍ¶×Ê
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»æ ‡ç§æŠ•èµ„
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # µã»÷ÒÑ»Ø¿î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # ç‚¹å‡»å·²å›æ¬¾
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # µã»÷´ıÊÕ¿î
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # ç‚¹å‡»å¾…æ”¶æ¬¾
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # µã»÷Í¶×ÊÅÅÃû
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # ç‚¹å‡»æŠ•èµ„æ’å
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # µã»÷Í¶×Ê¶î±ÈÀı
-    # ÓÃÓÚ²Ù×÷½èÈëÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # ç‚¹å‡»æŠ•èµ„é¢æ¯”ä¾‹
+    # ç”¨äºæ“ä½œå€Ÿå…¥ç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def StatisticsLoan(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷½èÈëÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»å€Ÿå…¥ç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷½èÈë×ÜÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»å€Ÿå…¥æ€»ç»Ÿè®¡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷½è¿îÈËÊı
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾äººæ•°
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # µã»÷½è¿î½ğ¶î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾é‡‘é¢
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # µã»÷±êÖÖ½è¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # ç‚¹å‡»æ ‡ç§å€Ÿæ¬¾
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # µã»÷ÒÑ»¹¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # ç‚¹å‡»å·²è¿˜æ¬¾
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # µã»÷´ı»¹¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # ç‚¹å‡»å¾…è¿˜æ¬¾
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # µã»÷ÓâÆÚ»¹¿î
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # ç‚¹å‡»é€¾æœŸè¿˜æ¬¾
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # µã»÷ÓâÆÚÃ÷Ï¸
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # ç‚¹å‡»é€¾æœŸæ˜ç»†
         elif listnum == "9":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[9]/a").click()  # µã»÷ÓâÆÚÅÅĞĞ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[9]/a").click()  # ç‚¹å‡»é€¾æœŸæ’è¡Œ
         elif listnum == "10":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[10]/a").click()  # µã»÷ÓâÆÚÊı¾İ·ÖÎö
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[10]/a").click()  # ç‚¹å‡»é€¾æœŸæ•°æ®åˆ†æ
         elif listnum == "11":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[11]/a").click()  # µã»÷ÓâÆÚÈÕÍ³¼Æ±È½Ï
-    # ÓÃÓÚ²Ù×÷Õ®È¨Í³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[11]/a").click()  # ç‚¹å‡»é€¾æœŸæ—¥ç»Ÿè®¡æ¯”è¾ƒ
+    # ç”¨äºæ“ä½œå€ºæƒç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def StatisticsClaims(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷Õ®È¨Í³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»å€ºæƒç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd").click()  # µã»÷Õ®È¨×ªÈÃ
-    # ÓÃÓÚ²Ù×÷Æ½Ì¨Í³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd").click()  # ç‚¹å‡»å€ºæƒè½¬è®©
+    # ç”¨äºæ“ä½œå¹³å°ç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def WebsiteStatistics(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # µã»÷Æ½Ì¨Í³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # ç‚¹å‡»å¹³å°ç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # µã»÷³äÖµÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # ç‚¹å‡»å……å€¼ç»Ÿè®¡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # µã»÷ÌáÏÖÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # ç‚¹å‡»æç°ç»Ÿè®¡
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # µã»÷ÓÃ»§Í³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # ç‚¹å‡»ç”¨æˆ·ç»Ÿè®¡
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[4]/a").click()  #µã»÷ÄêÁä¶ÎÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[4]/a").click()  #ç‚¹å‡»å¹´é¾„æ®µç»Ÿè®¡
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[5]/a").click()  # µã»÷ÍøÕ¾µæ¸¶Í³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[5]/a").click()  # ç‚¹å‡»ç½‘ç«™å«ä»˜ç»Ÿè®¡
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[6]/a").click()  # µã»÷ÍøÕ¾·ÑÓÃÍ³¼Æ
-    # ÓÃÓÚ²Ù×÷Ğ£Ô°ĞĞ³¤²Ëµ¥ÏÂÃæµÄ×Ó²Òµ­
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[6]/a").click()  # ç‚¹å‡»ç½‘ç«™è´¹ç”¨ç»Ÿè®¡
+    # ç”¨äºæ“ä½œæ ¡å›­è¡Œé•¿èœå•ä¸‹é¢çš„å­æƒ¨æ·¡
     def Agentsstatistics(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]").click()  # µã»÷Ğ£Ô°ĞĞ³¤Í³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]").click()  # ç‚¹å‡»æ ¡å›­è¡Œé•¿ç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click() # µã»÷Ğ£Ô°Ğ£Ô°ĞĞ³¤ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click() # ç‚¹å‡»æ ¡å›­æ ¡å›­è¡Œé•¿åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # µã»÷Ğ£Ô°ĞĞ³¤Í³¼Æ
-    # ÓÃÓÚ²Ù×÷¹ÜÀíÔ±¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # ç‚¹å‡»æ ¡å›­è¡Œé•¿ç»Ÿè®¡
+    # ç”¨äºæ“ä½œç®¡ç†å‘˜ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def Departments(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷¹ÜÀíÔ±¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»ç®¡ç†å‘˜ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷²¿ÃÅÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»éƒ¨é—¨åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷²¿ÃÅ»ØÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»éƒ¨é—¨å›ç«™
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷²¿ÃÅ³ÉÔ±
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»éƒ¨é—¨æˆå‘˜
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷´ı·ÖÅä»áÔ±
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»å¾…åˆ†é…ä¼šå‘˜
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # µã»÷´ı·ÖÅä½è¿î±ê
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # ç‚¹å‡»å¾…åˆ†é…å€Ÿæ¬¾æ ‡
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # µã»÷ËùÓĞ½è¿î±ê
-    # ÓÃÓÚ²Ù×÷Ìá³ÉÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # ç‚¹å‡»æ‰€æœ‰å€Ÿæ¬¾æ ‡
+    # ç”¨äºæ“ä½œææˆç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def Departments(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷Ìá³ÉÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»ææˆç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷²¿ÃÅÌá³ÉÍ³¼Æ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»éƒ¨é—¨ææˆç»Ÿè®¡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷³ÉÔ±Ìá³ÉÍ³¼Æ
-    # ÓÃÓÚ²Ù×÷ÎÒµÄ»áÔ±²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»æˆå‘˜ææˆç»Ÿè®¡
+    # ç”¨äºæ“ä½œæˆ‘çš„ä¼šå‘˜èœå•ä¸‹é¢çš„å­èœå•
     def MyMembership(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷ÎÒµÄ»áÔ±
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»æˆ‘çš„ä¼šå‘˜
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # µã»÷ÎÒµÄ»áÔ±ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # ç‚¹å‡»æˆ‘çš„ä¼šå‘˜åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # µã»÷±¾ÔÂµ½ÆÚÕËµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # ç‚¹å‡»æœ¬æœˆåˆ°æœŸè´¦å•
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # µã»÷ÓâÆÚÕËµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # ç‚¹å‡»é€¾æœŸè´¦å•
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # µã»÷»¹¿îÖĞ½è¿î±ê
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # ç‚¹å‡»è¿˜æ¬¾ä¸­å€Ÿæ¬¾æ ‡
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[5]/a").click()  # µã»÷ÒÑÍê³É½è¿î±ê
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[5]/a").click()  # ç‚¹å‡»å·²å®Œæˆå€Ÿæ¬¾æ ‡
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[6]/a").click()  # µã»÷ÒÑ»µÕË½è¿î±ê
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[6]/a").click()  # ç‚¹å‡»å·²åè´¦å€Ÿæ¬¾æ ‡
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[7]/a").click()  # µã»÷½è¿î»áÔ±ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[7]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾ä¼šå‘˜åˆ—è¡¨
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[8]/a").click()  # µã»÷»µÕË»áÔ±ÁĞ±í
-    # ÓÃÓÚ²Ù×÷³ÇÊĞºÏ»ïÈË²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[8]/a").click()  # ç‚¹å‡»åè´¦ä¼šå‘˜åˆ—è¡¨
+    # ç”¨äºæ“ä½œåŸå¸‚åˆä¼™äººèœå•ä¸‹é¢çš„å­èœå•
     def RegionPartner(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷³ÇÊĞºÏ»ïÈË
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»åŸå¸‚åˆä¼™äºº
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷³ÇÊĞºÏ»ïÈËÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»åŸå¸‚åˆä¼™äººåˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷´ı½É±£Ö¤½ğÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»å¾…ç¼´ä¿è¯é‡‘åˆ—è¡¨
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷ÒÑ½É±£Ö¤½ğ¼ÇÂ¼
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»å·²ç¼´ä¿è¯é‡‘è®°å½•
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷ÒµÎñÔ±ÁĞ±í
-    # ÓÃÓÚ²Ù×÷´û¿îÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»ä¸šåŠ¡å‘˜åˆ—è¡¨
+    # ç”¨äºæ“ä½œè´·æ¬¾ç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def LoanPartner(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷´û¿îÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»è´·æ¬¾ç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd/a").click() # µã»÷´û¿îÍ³¼ÆÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÊÕÒæÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd/a").click() # ç‚¹å‡»è´·æ¬¾ç»Ÿè®¡åˆ—è¡¨
+    # ç”¨äºæ“ä½œæ”¶ç›Šç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def IncomeStatistics(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷ÊÕÒæÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»æ”¶ç›Šç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd/a").click()  # µã»÷ÊÕÒæÍ³¼ÆÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÓâÆÚÍ³¼Æ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd/a").click()  # ç‚¹å‡»æ”¶ç›Šç»Ÿè®¡åˆ—è¡¨
+    # ç”¨äºæ“ä½œé€¾æœŸç»Ÿè®¡èœå•ä¸‹é¢çš„å­èœå•
     def ExpiredStatistics(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷ÓâÆÚÍ³¼Æ
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»é€¾æœŸç»Ÿè®¡
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd/a").click()  # µã»÷ÓâÆÚÍ³¼ÆÁĞ±í
-    # ÓÃÓÚ²Ù×÷»ı·ÖÉÌ³Ç²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd/a").click()  # ç‚¹å‡»é€¾æœŸç»Ÿè®¡åˆ—è¡¨
+    # ç”¨äºæ“ä½œç§¯åˆ†å•†åŸèœå•ä¸‹é¢çš„å­èœå•
     def Goods(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl/dt").click()  # µã»÷»ı·ÖÉÌ³Ç
+        self.driver.find_element_by_xpath("/html/body/dl/dt").click()  # ç‚¹å‡»ç§¯åˆ†å•†åŸ
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl/dd[1]/a").click()  # µã»÷ÉÌÆ·ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl/dd[1]/a").click()  # ç‚¹å‡»å•†å“åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl/dd[2]/a").click()  # µã»÷ÉÌÆ··ÖÀà
+            self.driver.find_element_by_xpath("/html/body/dl/dd[2]/a").click()  # ç‚¹å‡»å•†å“åˆ†ç±»
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl/dd[3]/a").click()  # µã»÷¶Ò»»ÉÌÆ·
-    # ÓÃÓÚ²Ù×÷ÎÄÕÂ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl/dd[3]/a").click()  # ç‚¹å‡»å…‘æ¢å•†å“
+    # ç”¨äºæ“ä½œæ–‡ç« ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def ArticleMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷ÎÄÕÂ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»æ–‡ç« ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷ÎÄÕÂÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»æ–‡ç« åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷ÎÄÕÂ»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷ÎÄÕÂ·ÖÀà²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»æ–‡ç« å›æ”¶ç«™
+    # ç”¨äºæ“ä½œæ–‡ç« åˆ†ç±»èœå•ä¸‹é¢çš„å­èœå•
     def ArticleCate(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷ÎÄÕÂ·ÖÀà
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»æ–‡ç« åˆ†ç±»
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷·ÖÀàÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»åˆ†ç±»åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷·ÖÀà»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷Ç°¶ËÉèÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»åˆ†ç±»å›æ”¶ç«™
+    # ç”¨äºæ“ä½œå‰ç«¯è®¾ç½®èœå•ä¸‹é¢çš„å­èœå•
     def NavSet(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷Ç°¶ËÉèÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»å‰ç«¯è®¾ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # µã»÷µ¼º½²Ëµ¥ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # ç‚¹å‡»å¯¼èˆªèœå•åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # µã»÷Í¶Æ±µ÷²éÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # ç‚¹å‡»æŠ•ç¥¨è°ƒæŸ¥åˆ—è¡¨
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # µã»÷Ç°¶Ë¹ã¸æÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÓÑÇéÁ´½Ó²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # ç‚¹å‡»å‰ç«¯å¹¿å‘Šåˆ—è¡¨
+    # ç”¨äºæ“ä½œå‹æƒ…é“¾æ¥èœå•ä¸‹é¢çš„å­èœå•
     def LinkGroup(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷ÓÑÇéÁ´½Ó
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»å‹æƒ…é“¾æ¥
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # µã»÷ÓÑÇéÁ´½Ó·Ö×é
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # ç‚¹å‡»å‹æƒ…é“¾æ¥åˆ†ç»„
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # µã»÷ÓÑÇéÁ´½ÓÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÖÜÄê»î¶¯²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # ç‚¹å‡»å‹æƒ…é“¾æ¥åˆ—è¡¨
+    # ç”¨äºæ“ä½œå‘¨å¹´æ´»åŠ¨èœå•ä¸‹é¢çš„å­èœå•
     def Special(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl/dt").click()  # µã»÷ÖÜÄê»î¶¯
+        self.driver.find_element_by_xpath("/html/body/dl/dt").click()  # ç‚¹å‡»å‘¨å¹´æ´»åŠ¨
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl/dd").click()  # µã»÷Å®ÉñÆÀÑ¡
-    # ÓÃÓÚÏµÍ³ÉèÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl/dd").click()  # ç‚¹å‡»å¥³ç¥è¯„é€‰
+    # ç”¨äºç³»ç»Ÿè®¾ç½®èœå•ä¸‹é¢çš„å­èœå•
     def SysConf(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # µã»÷ÏµÍ³ÉèÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[1]/dt").click()  # ç‚¹å‡»ç³»ç»Ÿè®¾ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # µã»÷ÏµÍ³ÅäÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[1]/a").click()  # ç‚¹å‡»ç³»ç»Ÿé…ç½®
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # µã»÷Ç©µ½½±ÀøÅäÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[2]/a").click()  # ç‚¹å‡»ç­¾åˆ°å¥–åŠ±é…ç½®
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # µã»÷ÑûÇë·µÀûÅäÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[3]/a").click()  # ç‚¹å‡»é‚€è¯·è¿”åˆ©é…ç½®
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # µã»÷ÊÚÈ¨·şÎñ»ú¹¹·µÓ¶ÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[4]/a").click()  # ç‚¹å‡»æˆæƒæœåŠ¡æœºæ„è¿”ä½£è®¾ç½®
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # µã»÷QQ¿Í·şÅäÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[5]/a").click()  # ç‚¹å‡»QQå®¢æœé…ç½®
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # µã»÷ÌáÏÖÊÖĞø·Ñ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[6]/a").click()  # ç‚¹å‡»æç°æ‰‹ç»­è´¹
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # µã»÷ÌáÏÖÒøĞĞÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[7]/a").click()  # ç‚¹å‡»æç°é“¶è¡Œè®¾ç½®
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # µã»÷ÈÏÖ¤ÀàĞÍÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[8]/a").click()  # ç‚¹å‡»è®¤è¯ç±»å‹è®¾ç½®
         elif listnum == "9":
-            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[9]/a").click()  # µã»÷ÓÃ»§Æ½Ì¨×¢²áÑéÖ¤ÉèÖÃ
-    # ÓÃÓÚ²Ù×÷´û¿îÉèÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[1]/dd[9]/a").click()  # ç‚¹å‡»ç”¨æˆ·å¹³å°æ³¨å†ŒéªŒè¯è®¾ç½®
+    # ç”¨äºæ“ä½œè´·æ¬¾è®¾ç½®èœå•ä¸‹é¢çš„å­èœå•
     def DealCate(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # µã»÷´û¿îÉèÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[2]/dt").click()  # ç‚¹å‡»è´·æ¬¾è®¾ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # µã»÷´û¿î·ÖÀàÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[1]/a").click()  # ç‚¹å‡»è´·æ¬¾åˆ†ç±»è®¾ç½®
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # µã»÷·ÖÀà»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[2]/a").click()  # ç‚¹å‡»åˆ†ç±»å›æ”¶ç«™
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # µã»÷´û¿îÀàĞÍÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[3]/a").click()  # ç‚¹å‡»è´·æ¬¾ç±»å‹è®¾ç½®
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # µã»÷ÀàĞÍ»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[4]/a").click()  # ç‚¹å‡»ç±»å‹å›æ”¶ç«™
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # µã»÷´û¿î³ÇÊĞÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[5]/a").click()  # ç‚¹å‡»è´·æ¬¾åŸå¸‚è®¾ç½®
         elif listnum == "6":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # µã»÷³ÇÊĞ»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[6]/a").click()  # ç‚¹å‡»åŸå¸‚å›æ”¶ç«™
         elif listnum == "7":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # µã»÷ºÏÍ¬·¶±¾ÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[7]/a").click()  # ç‚¹å‡»åˆåŒèŒƒæœ¬è®¾ç½®
         elif listnum == "8":
-            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # µã»÷·¶±¾»ØÊÕÕ¾
-    # ÓÃÓÚ²Ù×÷ÌåÑé½ğ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[2]/dd[8]/a").click()  # ç‚¹å‡»èŒƒæœ¬å›æ”¶ç«™
+    # ç”¨äºæ“ä½œä½“éªŒé‡‘ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def LearnMoney(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # µã»÷ÌåÑé½ğ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[3]/dt").click()  # ç‚¹å‡»ä½“éªŒé‡‘ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # µã»÷·¢·ÅÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[1]/a").click()  # ç‚¹å‡»å‘æ”¾åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # µã»÷Í¶×Ê¼ÇÂ¼
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[2]/a").click()  # ç‚¹å‡»æŠ•èµ„è®°å½•
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # µã»÷»î¶¯ÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[3]/a").click()  # ç‚¹å‡»æ´»åŠ¨è®¾ç½®
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # µã»÷Àí²Æ²úÆ·ÁĞ±í
-    # ÓÃÓÚ²Ù×÷½Ó¿ÚÉèÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[3]/dd[4]/a").click()  # ç‚¹å‡»ç†è´¢äº§å“åˆ—è¡¨
+    # ç”¨äºæ“ä½œæ¥å£è®¾ç½®èœå•ä¸‹é¢çš„å­èœå•
     def AIPSet(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # µã»÷½Ó¿ÚÉèÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[4]/dt").click()  # ç‚¹å‡»æ¥å£è®¾ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # µã»÷×Ê½ğÍĞ¹Ü
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[1]/a").click()  # ç‚¹å‡»èµ„é‡‘æ‰˜ç®¡
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # µã»÷Ö§¸¶½Ó¿ÚÉèÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[2]/a").click()  # ç‚¹å‡»æ”¯ä»˜æ¥å£è®¾ç½®
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # µã»÷»áÔ±µÚÈı·½µÇÂ¼
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[3]/a").click()  # ç‚¹å‡»ä¼šå‘˜ç¬¬ä¸‰æ–¹ç™»å½•
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[4]/a").click()  # µã»÷»áÔ±ÕûºÏ²å¼ş
-    # ÓÃÓÚ²Ù×÷ÒÆ¶¯Æ½ÉèÖÃ²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[4]/dd[4]/a").click()  # ç‚¹å‡»ä¼šå‘˜æ•´åˆæ’ä»¶
+    # ç”¨äºæ“ä½œç§»åŠ¨å¹³è®¾ç½®èœå•ä¸‹é¢çš„å­èœå•
     def MobileConf(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # µã»÷ÒÆ¶¯Æ½ÉèÖÃ
+        self.driver.find_element_by_xpath("/html/body/dl[5]/dt").click()  # ç‚¹å‡»ç§»åŠ¨å¹³è®¾ç½®
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # µã»÷ÊÖ»ú¶ËÅäÖÃ
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[1]/a").click()  # ç‚¹å‡»æ‰‹æœºç«¯é…ç½®
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # µã»÷ÊÖ»ú¶Ë¹ã¸æÁĞ±í
-    # ÓÃÓÚ²Ù×÷ÏµÍ³¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[5]/dd[2]/a").click()  # ç‚¹å‡»æ‰‹æœºç«¯å¹¿å‘Šåˆ—è¡¨
+    # ç”¨äºæ“ä½œç³»ç»Ÿç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def SyeRole(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # µã»÷ÏµÍ³¹ÜÀíÔ±
+        self.driver.find_element_by_xpath("/html/body/dl[6]/dt").click()  # ç‚¹å‡»ç³»ç»Ÿç®¡ç†å‘˜
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]").click()  # µã»÷½ÇÉ«¹ÜÀí
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[1]").click()  # ç‚¹å‡»è§’è‰²ç®¡ç†
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]").click()  # µã»÷½ÇÉ«»ØÊÕÕ¾
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[2]").click()  # ç‚¹å‡»è§’è‰²å›æ”¶ç«™
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]").click()  # µã»÷¹ÜÀíÔ±¹Ü
-    # ÓÃÓÚ²Ù×÷¶ÌÏ¢ÓÊ¼ş¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[6]/dd[3]").click()  # ç‚¹å‡»ç®¡ç†å‘˜ç®¡
+    # ç”¨äºæ“ä½œçŸ­æ¯é‚®ä»¶ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def MsgMailMent(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click() # µã»÷¶ÌÏ¢ÓÊ¼ş¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[7]/dt").click() # ç‚¹å‡»çŸ­æ¯é‚®ä»¶ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # µã»÷ÏûÏ¢Ä£°å¹ÜÀí
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[1]/a").click()  # ç‚¹å‡»æ¶ˆæ¯æ¨¡æ¿ç®¡ç†
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # µã»÷ÓÊ¼ş·şÎñÆ÷ÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[2]/a").click()  # ç‚¹å‡»é‚®ä»¶æœåŠ¡å™¨åˆ—è¡¨
         elif listnum == "3":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[3]/a").click()  # µã»÷ÓÊ¼şÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[3]/a").click()  # ç‚¹å‡»é‚®ä»¶åˆ—è¡¨
         elif listnum == "4":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[4]/a").click()  # µã»÷¶ÌÏ¢½è¿îÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[4]/a").click()  # ç‚¹å‡»çŸ­æ¯å€Ÿæ¬¾åˆ—è¡¨
         elif listnum == "5":
-            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[5]/a").click()  # µã»÷¶ÌÏ¢ÁĞ±í
-    # ÓÃÓÚ²Ù×÷¶ÓÁĞ¹ÜÀí²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[7]/dd[5]/a").click()  # ç‚¹å‡»çŸ­æ¯åˆ—è¡¨
+    # ç”¨äºæ“ä½œé˜Ÿåˆ—ç®¡ç†èœå•ä¸‹é¢çš„å­èœå•
     def DealMsgList(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # µã»÷¶ÓÁĞ¹ÜÀí
+        self.driver.find_element_by_xpath("/html/body/dl[8]/dt").click()  # ç‚¹å‡»é˜Ÿåˆ—ç®¡ç†
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # µã»÷ÒµÎñ¶ÓÁĞÁĞ±í
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[1]/a").click()  # ç‚¹å‡»ä¸šåŠ¡é˜Ÿåˆ—åˆ—è¡¨
         elif listnum == "2":
-            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # µã»÷ÍÆ¹ã¶ÓÁĞÁĞ±í
-    # ÓÃÓÚ²Ù×÷Êı¾İ¿â²Ëµ¥ÏÂÃæµÄ×Ó²Ëµ¥
+            self.driver.find_element_by_xpath("/html/body/dl[8]/dd[2]/a").click()  # ç‚¹å‡»æ¨å¹¿é˜Ÿåˆ—åˆ—è¡¨
+    # ç”¨äºæ“ä½œæ•°æ®åº“èœå•ä¸‹é¢çš„å­èœå•
     def Database(self,listnum):
-        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # µã»÷Êı¾İ¿â
+        self.driver.find_element_by_xpath("/html/body/dl[9]/dt").click()  # ç‚¹å‡»æ•°æ®åº“
         if listnum == "1":
-            self.driver.find_element_by_xpath("/html/body/dl[9]/dd/a").click()  # µã»÷SQL²Ù×÷
-    # ÓÃÓÚ²Ù×÷Ê×µ¥´ıÉóºËÁĞ±íÉóºË¶¯×÷
+            self.driver.find_element_by_xpath("/html/body/dl[9]/dd/a").click()  # ç‚¹å‡»SQLæ“ä½œ
+    # ç”¨äºæ“ä½œé¦–å•å¾…å®¡æ ¸åˆ—è¡¨å®¡æ ¸åŠ¨ä½œ
     def FirstPublish(self,action):
-        if action == "shcz" or action == "ÉóºË²Ù×÷" :
+        if action == "shcz" or action == "å®¡æ ¸æ“ä½œ" :
             self.driver.find_element_by_xpath\
-                ("/html/body/div[2]/table/tbody/tr[3]/td[13]/a").click()  # µã»÷ÉóºË²Ù×÷
-        elif action == "rl" or action == "ÈÏÁì":
+                ("/html/body/div[2]/table/tbody/tr[3]/td[13]/a").click()  # ç‚¹å‡»å®¡æ ¸æ“ä½œ
+        elif action == "rl" or action == "è®¤é¢†":
             self.driver.find_element_by_xpath\
-                ("/html/body/div[2]/table/tbody/tr[3]/td[14]/a").click()  # µã»÷ÈÏÁì²Ù×÷
-        elif action == "shrz" or action == "ÉóºËÈÕÖ¾":
+                ("/html/body/div[2]/table/tbody/tr[3]/td[14]/a").click()  # ç‚¹å‡»è®¤é¢†æ“ä½œ
+        elif action == "shrz" or action == "å®¡æ ¸æ—¥å¿—":
             self.driver.find_element_by_xpath\
-                ("/html/body/div[2]/table/tbody/tr[3]/td[15]/a").click()  # µã»÷ÉóºËÈÕÖ¾
-        elif action == "dkmc" or action == "´û¿îÃû³Æ":
+                ("/html/body/div[2]/table/tbody/tr[3]/td[15]/a").click()  # ç‚¹å‡»å®¡æ ¸æ—¥å¿—
+        elif action == "dkmc" or action == "è´·æ¬¾åç§°":
             self.driver.find_element_by_xpath\
-                ("/html/body/div[2]/table/tbody/tr[3]/td[3]/a").click()  # µã»÷´û¿îÃû³Æ
-        elif action == "jkr" or action == "½è¿îÈË":
+                ("/html/body/div[2]/table/tbody/tr[3]/td[3]/a").click()  # ç‚¹å‡»è´·æ¬¾åç§°
+        elif action == "jkr" or action == "å€Ÿæ¬¾äºº":
             self.driver.find_element_by_xpath\
-                ("/html/body/div[2]/table/tbody/tr[3]/td[4]/a").click()  # µã»÷½è¿îÈË
-    # ÓÃÓÚ²Ù×÷¸´ÉóºËÁĞ±íÉóºË¶¯×÷
+                ("/html/body/div[2]/table/tbody/tr[3]/td[4]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾äºº
+    # ç”¨äºæ“ä½œå¤å®¡æ ¸åˆ—è¡¨å®¡æ ¸åŠ¨ä½œ
     def TruePublish(self,action):
-        if action == "dkmc" or action == "´û¿îÃû³Æ":
+        if action == "dkmc" or action == "è´·æ¬¾åç§°":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/table/tbody/tr[3]/td[3]/a").click()
-        elif action == "jkr" or action == "½è¿îÈË":
+        elif action == "jkr" or action == "å€Ÿæ¬¾äºº":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/table/tbody/tr[3]/td[4]/a").click()
-        elif action == "shcz" or action == "ÉóºË²Ù×÷":
+        elif action == "shcz" or action == "å®¡æ ¸æ“ä½œ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/table/tbody/tr[3]/td[14]/a").click()
-        elif action == "shrz" or action == "ÉóºËÈÕÖ¾":
+        elif action == "shrz" or action == "å®¡æ ¸æ—¥å¿—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/table/tbody/tr[3]/td[15]/a").click()
-    # ÓÃÓÚ²Ù×÷Ğø½è´ıÉóºËÁĞ±íÉóºË¶¯×÷
+    # ç”¨äºæ“ä½œç»­å€Ÿå¾…å®¡æ ¸åˆ—è¡¨å®¡æ ¸åŠ¨ä½œ
     def Publish(self,action):
-        if action == "shcz" or action == "ÉóºË²Ù×÷" :
-            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[15]/a").click()  # µã»÷ÉóºË²Ù×÷
-        elif action == "rl" or action == "ÈÏÁì":
-            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[16]/a").click()  # µã»÷ÈÏÁì²Ù×÷
-        elif action == "shrz" or action == "ÉóºËÈÕÖ¾":
-            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[17]/a").click()  # µã»÷ÉóºËÈÕÖ¾
-        elif action == "dkmc" or action == "´û¿îÃû³Æ":
-            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[3]").click()  # µã»÷´û¿îÃû³Æ
-        elif action == "jkr" or action == "½è¿îÈË":
-            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[4]/a").click()  # µã»÷½è¿îÈË
-    # ÓÃÓÚ²Ù×÷ÉóºËÏêÇéÒ³µÄÉóºË¶¯×÷
+        if action == "shcz" or action == "å®¡æ ¸æ“ä½œ" :
+            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[15]/a").click()  # ç‚¹å‡»å®¡æ ¸æ“ä½œ
+        elif action == "rl" or action == "è®¤é¢†":
+            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[16]/a").click()  # ç‚¹å‡»è®¤é¢†æ“ä½œ
+        elif action == "shrz" or action == "å®¡æ ¸æ—¥å¿—":
+            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[17]/a").click()  # ç‚¹å‡»å®¡æ ¸æ—¥å¿—
+        elif action == "dkmc" or action == "è´·æ¬¾åç§°":
+            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[3]").click()  # ç‚¹å‡»è´·æ¬¾åç§°
+        elif action == "jkr" or action == "å€Ÿæ¬¾äºº":
+            self.driver.find_element_by_xpath("/html/body/div[2]/table/tbody/tr[3]/td[4]/a").click()  # ç‚¹å‡»å€Ÿæ¬¾äºº
+    # ç”¨äºæ“ä½œå®¡æ ¸è¯¦æƒ…é¡µçš„å®¡æ ¸åŠ¨ä½œ
     def PublishPage(self,state,city,type,status,time,action):
         self.driver.find_element_by_xpath\
-            ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]").click()  # µã»÷Ñ¡ÔñÖĞÊ¡·İ
-        if state == "±±¾©":
+            ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]").click()  # ç‚¹å‡»é€‰æ‹©ä¸­çœä»½
+        if state == "åŒ—äº¬":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[2]").click()
-        elif state == "°²»Õ":
+        elif state == "å®‰å¾½":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[3]").click()
-        elif state == "¸£½¨":
+        elif state == "ç¦å»º":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[4]").click()
-        elif state == "¸ÊËà":
+        elif state == "ç”˜è‚ƒ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[5]").click()
-        elif state == "¹ã¶«":
+        elif state == "å¹¿ä¸œ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[6]").click()
-        elif state == "¹ãÎ÷":
+        elif state == "å¹¿è¥¿":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[7]").click()
-        elif state == "¹óÖİ":
+        elif state == "è´µå·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[8]").click()
-        elif state == "º£ÄÏ":
+        elif state == "æµ·å—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[9]").click()
-        elif state == "ºÓ±±":
+        elif state == "æ²³åŒ—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[10]").click()
-        elif state == "ºÓÄÏ":
+        elif state == "æ²³å—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[11]").click()
-        elif state == "ºÚÁú½­":
+        elif state == "é»‘é¾™æ±Ÿ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[12]").click()
-        elif state == "ºş±±":
+        elif state == "æ¹–åŒ—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[13]").click()
-        elif state == "ºşÄÏ":
+        elif state == "æ¹–å—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[14]").click()
-        elif state == "¼ªÁÖ":
+        elif state == "å‰æ—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[15]").click()
-        elif state == "½­ËÕ":
+        elif state == "æ±Ÿè‹":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[16]").click()
-        elif state == "½­Î÷":
+        elif state == "æ±Ÿè¥¿":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[17]").click()
-        elif state == "ÁÉÄş":
+        elif state == "è¾½å®":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[18]").click()
-        elif state == "ÄÚÃÉ¹Å":
+        elif state == "å†…è’™å¤":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[19]").click()
-        elif state == "ÄşÏÄ":
+        elif state == "å®å¤":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[20]").click()
-        elif state == "Çàº£":
+        elif state == "é’æµ·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[21]").click()
-        elif state == "É½¶«":
+        elif state == "å±±ä¸œ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[22]").click()
-        elif state == "É½Î÷":
+        elif state == "å±±è¥¿":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[23]").click()
-        elif state == "ÉÂÎ÷":
+        elif state == "é™•è¥¿":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[24]").click()
-        elif state == "ÉÏº£":
+        elif state == "ä¸Šæµ·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[25]").click()
-        elif state == "ËÄ´¨":
+        elif state == "å››å·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[26]").click()
-        elif state == "Ìì½ò":
+        elif state == "å¤©æ´¥":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[27]").click()
-        elif state == "Î÷²Ø":
+        elif state == "è¥¿è—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[28]").click()
-        elif state == "ĞÂ½®":
+        elif state == "æ–°ç–†":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[29]").click()
-        elif state == "ÔÆÄÏ":
+        elif state == "äº‘å—":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[30]").click()
-        elif state == "Õã½­":
+        elif state == "æµ™æ±Ÿ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[31]").click()
-        elif state == "ÖØÇì":
+        elif state == "é‡åº†":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[32]").click()
-        elif state == "Ïã¸Û":
+        elif state == "é¦™æ¸¯":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[33]").click()
-        elif state == "°ÄÃÅ":
+        elif state == "æ¾³é—¨":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[34]").click()
-        elif state == "Ì¨Íå":
+        elif state == "å°æ¹¾":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[1]/option[35]").click()
         self.driver.find_element_by_xpath\
-            ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]").click()  # µã»÷Ñ¡ÔñÖĞ³ÇÊĞ
-        if state == "±±¾©" and city == "±±¾©"\
-                or state == "°²»Õ" and city == "°²Çì" \
-                or state == "¸£½¨" and city == "¸£Öİ" \
-                or state == "¸ÊËà" and city == "À¼Öİ" \
-                or state == "¹ã¶«" and city == "¹ãÖİ":
+            ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]").click()  # ç‚¹å‡»é€‰æ‹©ä¸­åŸå¸‚
+        if state == "åŒ—äº¬" and city == "åŒ—äº¬"\
+                or state == "å®‰å¾½" and city == "å®‰åº†" \
+                or state == "ç¦å»º" and city == "ç¦å·" \
+                or state == "ç”˜è‚ƒ" and city == "å…°å·" \
+                or state == "å¹¿ä¸œ" and city == "å¹¿å·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[2]").click()
-        elif state == "°²»Õ" and city == "°ö²º" \
-                or state == "¸£½¨" and city == "ÁúÑÒ"\
-                or state == "¸ÊËà" and city == "°×Òø" \
-                or state == "¹ã¶«" and city == "ÉîÛÚ":
+        elif state == "å®‰å¾½" and city == "èšŒåŸ " \
+                or state == "ç¦å»º" and city == "é¾™å²©"\
+                or state == "ç”˜è‚ƒ" and city == "ç™½é“¶" \
+                or state == "å¹¿ä¸œ" and city == "æ·±åœ³":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[3]").click()
-        elif state == "°²»Õ" and city == "³²ºş" \
-                or state == "¸£½¨" and city == "ÄÏÆ½"\
-                or state == "¸ÊËà" and city == "¶¨Î÷" \
-                or state == "¹ã¶«" and city == "³±Öİ":
+        elif state == "å®‰å¾½" and city == "å·¢æ¹–" \
+                or state == "ç¦å»º" and city == "å—å¹³"\
+                or state == "ç”˜è‚ƒ" and city == "å®šè¥¿" \
+                or state == "å¹¿ä¸œ" and city == "æ½®å·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[4]").click()
-        elif state == "°²»Õ" and city == "³ØÖİ" \
-                or state == "¸£½¨" and city == "ÄşµÂ"\
-                or state == "¸ÊËà" and city == "¸ÊÄÏ" \
-                or state == "¹ã¶«" and city == "¶«İ¸":
+        elif state == "å®‰å¾½" and city == "æ± å·" \
+                or state == "ç¦å»º" and city == "å®å¾·"\
+                or state == "ç”˜è‚ƒ" and city == "ç”˜å—" \
+                or state == "å¹¿ä¸œ" and city == "ä¸œè":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[5]").click()
-        elif state == "°²»Õ" and city == "³üÖİ" \
-                or state == "¸£½¨" and city == "ÆÎÌï"\
-                or tate == "¸ÊËà" and city == "¼ÎÓø¹Ø" \
-                or state == "¹ã¶«" and city == "·ğÉ½":
+        elif state == "å®‰å¾½" and city == "æ»å·" \
+                or state == "ç¦å»º" and city == "è†ç”°"\
+                or tate == "ç”˜è‚ƒ" and city == "å˜‰å³ªå…³" \
+                or state == "å¹¿ä¸œ" and city == "ä½›å±±":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[6]").click()
-        elif state == "°²»Õ" and city == "¸·Ñô" \
-                or state == "¸£½¨" and city == "ÈªÖİ"\
-                or state == "¸ÊËà" and city == "½ğ²ı" \
-                or state == "¹ã¶«" and city == "ºÓÔ´":
+        elif state == "å®‰å¾½" and city == "é˜œé˜³" \
+                or state == "ç¦å»º" and city == "æ³‰å·"\
+                or state == "ç”˜è‚ƒ" and city == "é‡‘æ˜Œ" \
+                or state == "å¹¿ä¸œ" and city == "æ²³æº":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[7]").click()
-        elif state == "°²»Õ" and city == "»´±±" \
-                or state == "¸£½¨" and city == "ÈıÃ÷"\
-                or state == "¸ÊËà" and city == "¾ÆÈª" \
-                or state == "¹ã¶«" and city == "»İÖİ":
+        elif state == "å®‰å¾½" and city == "æ·®åŒ—" \
+                or state == "ç¦å»º" and city == "ä¸‰æ˜"\
+                or state == "ç”˜è‚ƒ" and city == "é…’æ³‰" \
+                or state == "å¹¿ä¸œ" and city == "æƒ å·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[8]").click()
-        elif state == "°²»Õ" and city == "»´ÄÏ" \
-                or state == "¸£½¨" and city == "ÏÃÃÅ"\
-                or state == "¸ÊËà" and city == "ÁÙÏÄ" \
-                or state == "¹ã¶«" and city == "½­ÃÅ":
+        elif state == "å®‰å¾½" and city == "æ·®å—" \
+                or state == "ç¦å»º" and city == "å¦é—¨"\
+                or state == "ç”˜è‚ƒ" and city == "ä¸´å¤" \
+                or state == "å¹¿ä¸œ" and city == "æ±Ÿé—¨":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[9]").click()
-        elif state == "°²»Õ" and city == "»ÆÉ½" \
-                or state == "¸£½¨" and city == "ÕÄÖİ"\
-                or state == "¸ÊËà" and city == "Â¤ÄÏ" \
-                or state == "¹ã¶«" and city == "½ÒÑô":
+        elif state == "å®‰å¾½" and city == "é»„å±±" \
+                or state == "ç¦å»º" and city == "æ¼³å·"\
+                or state == "ç”˜è‚ƒ" and city == "é™‡å—" \
+                or state == "å¹¿ä¸œ" and city == "æ­é˜³":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[10]").click()
-        elif state == "°²»Õ" and city == "Áù°²" \
-                or state == "¸ÊËà" and city == "Æ½Á¹" \
-                or state == "¹ã¶«" and city == "Ã¯Ãû":
+        elif state == "å®‰å¾½" and city == "å…­å®‰" \
+                or state == "ç”˜è‚ƒ" and city == "å¹³å‡‰" \
+                or state == "å¹¿ä¸œ" and city == "èŒ‚å":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[11]").click()
-        elif state == "°²»Õ" and city == "Âí°°É½" \
-                or state == "¸ÊËà" and city == "ÇìÑô" \
-                or state == "¹ã¶«" and city == "Ã·Öİ":
+        elif state == "å®‰å¾½" and city == "é©¬éå±±" \
+                or state == "ç”˜è‚ƒ" and city == "åº†é˜³" \
+                or state == "å¹¿ä¸œ" and city == "æ¢…å·":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[12]").click()
-        elif state == "°²»Õ" and city == "ËŞÖİ" \
-                or state == "¸ÊËà" and city == "ÌìË®" \
-                or state == "¹ã¶«" and city == "ÇåÔ¶":
+        elif state == "å®‰å¾½" and city == "å®¿å·" \
+                or state == "ç”˜è‚ƒ" and city == "å¤©æ°´" \
+                or state == "å¹¿ä¸œ" and city == "æ¸…è¿œ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[13]").click()
-        elif state == "°²»Õ" and city == "Í­Áê" \
-                or state == "¸ÊËà" and city == "ÎäÍş" \
-                or state == "¹ã¶«" and city == "ÉÇÍ·":
+        elif state == "å®‰å¾½" and city == "é“œé™µ" \
+                or state == "ç”˜è‚ƒ" and city == "æ­¦å¨" \
+                or state == "å¹¿ä¸œ" and city == "æ±•å¤´":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[14]").click()
-        elif state == "°²»Õ" and city == "Îßºş" \
-                or state == "¸ÊËà" and city == "ÕÅÒ´" \
-                or state == "¹ã¶«" and city == "ÉÇÎ²":
+        elif state == "å®‰å¾½" and city == "èŠœæ¹–" \
+                or state == "ç”˜è‚ƒ" and city == "å¼ æ–" \
+                or state == "å¹¿ä¸œ" and city == "æ±•å°¾":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[15]").click()
-        elif state == "°²»Õ" and city == "Ğû³Ç" \
-                or state == "¹ã¶«" and city == "ÉØ¹Ø":
+        elif state == "å®‰å¾½" and city == "å®£åŸ" \
+                or state == "å¹¿ä¸œ" and city == "éŸ¶å…³":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[16]").click()
-        elif state == "°²»Õ" and city == "ÙñÖİ" \
-                or state == "¹ã¶«" and city == "Ñô½­":
+        elif state == "å®‰å¾½" and city == "äº³å·" \
+                or state == "å¹¿ä¸œ" and city == "é˜³æ±Ÿ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[17]").click()
-        elif state == "°²»Õ" and city == "ºÏ·Ê" \
-                or state == "¹ã¶«" and city == "ÔÆ¸¡":
+        elif state == "å®‰å¾½" and city == "åˆè‚¥" \
+                or state == "å¹¿ä¸œ" and city == "äº‘æµ®":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[18]").click()
-        elif state == "¹ã¶«" and city == "Õ¿½­":
+        elif state == "å¹¿ä¸œ" and city == "æ¹›æ±Ÿ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[19]").click()
-        elif state == "¹ã¶«" and city == "ÕØÇì":
+        elif state == "å¹¿ä¸œ" and city == "è‚‡åº†":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[36]/td[2]/select[2]/option[20]").click()
         self.driver.find_element_by_xpath\
-            ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select").click()  # µã»÷Ñ¡ÖĞ½è¿îÓÃÍ¾
-        if type == "´´Òµ½è¿î" or type == "1":
+            ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select").click()  # ç‚¹å‡»é€‰ä¸­å€Ÿæ¬¾ç”¨é€”
+        if type == "åˆ›ä¸šå€Ÿæ¬¾" or type == "1":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[2]").click()
-        elif type == "¿ªµê½è¿î" or type == "2":
+        elif type == "å¼€åº—å€Ÿæ¬¾" or type == "2":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[3]").click()
-        elif type == "ÂÃÓÎ½è¿î" or type == "3":
+        elif type == "æ—…æ¸¸å€Ÿæ¬¾" or type == "3":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[4]").click()
-        elif type == "ÂòµçÄÔ½è¿î" or type == "4":
+        elif type == "ä¹°ç”µè„‘å€Ÿæ¬¾" or type == "4":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[5]").click()
-        elif type == "ÂòÊÖ»ú½è¿î" or type == "5":
+        elif type == "ä¹°æ‰‹æœºå€Ÿæ¬¾" or type == "5":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[6]").click()
-        elif type == "¹ºÎï½è¿î" or type == "6":
+        elif type == "è´­ç‰©å€Ÿæ¬¾" or type == "6":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[7]").click()
-        elif type == "¿¼¼İÕÕ½è¿î" or type == "7":
+        elif type == "è€ƒé©¾ç…§å€Ÿæ¬¾" or type == "7":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[8]").click()
-        elif type == "Éú»î·Ñ½è¿î" or type == "8":
+        elif type == "ç”Ÿæ´»è´¹å€Ÿæ¬¾" or type == "8":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[9]").click()
-        elif type == "ÆäËûÏû·Ñ½è¿î" or type == "9":
+        elif type == "å…¶ä»–æ¶ˆè´¹å€Ÿæ¬¾" or type == "9":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[1]/tbody/tr[37]/td[2]/select/option[10]").click()
-        # Ñ¡ÔñÉó×´Ì¬
-        if status == "ÉóºËÊ§°Ü" or status == "Ê§°Ü" or status == "3":
+        # é€‰æ‹©å®¡çŠ¶æ€
+        if status == "å®¡æ ¸å¤±è´¥" or status == "å¤±è´¥" or status == "3":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[2]/td[2]/label[1]/input").click()
-        elif status == "ÉóºË³É¹¦" or status == "³É¹¦" or status == "1":
+        elif status == "å®¡æ ¸æˆåŠŸ" or status == "æˆåŠŸ" or status == "1":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[2]/td[2]/label[2]").click()
-            # Ñ¡ÔñÊ±¼ä
-            if time == "Ê±¼ä" :
+            # é€‰æ‹©æ—¶é—´
+            if time == "æ—¶é—´" :
                 self.driver.find_element_by_xpath\
                     ("/html/body/div[2]/form/table[6]/tbody/tr[5]/td[2]/input[2]").click()
                 self.driver.find_element_by_xpath\
                     ("/html/body/div[7]/table/thead/tr[2]/td[3]/div").click()
-            elif time == "Çå¿Õ":
+            elif time == "æ¸…ç©º":
                 self.driver.find_element_by_xpath\
                     ("/html/body/div[2]/form/table[6]/tbody/tr[5]/td[2]/input[3]").click()
-        elif status == "ÉóºËÖĞ" or status == "2":
+        elif status == "å®¡æ ¸ä¸­" or status == "2":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[2]/td[2]/label[3]/input").click()
-        # ÉóºËÌá½»
-        if action == "Ìá½»" or action == "submit":
+        # å®¡æ ¸æäº¤
+        if action == "æäº¤" or action == "submit":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[7]/td[2]/input[7]").click()
-        elif action == "ÖØÖÃ" or action == "reset":
+        elif action == "é‡ç½®" or action == "reset":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[7]/td[2]/input[8]").click()
-    # ÓÃÓÚ²Ù×÷¸´ÉóÏêÇéÒ³
+    # ç”¨äºæ“ä½œå¤å®¡è¯¦æƒ…é¡µ
     def TruePublish(self,status,action):
-        if status == "pass" or status == "ÉóºËÍ¨¹ı":
+        if status == "pass" or status == "å®¡æ ¸é€šè¿‡":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[3]/td[2]/label[1]/input").click()
-        elif status == "return" or status == "ÍË»Ø³õÉó":
+        elif status == "return" or status == "é€€å›åˆå®¡":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[3]/td[2]/label[2]/input").click()
-        if action == "submit" or action == "Ìá½»":
+        if action == "submit" or action == "æäº¤":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[6]/td[2]/input[7]").click()
-        elif action == "reset" or action == "ÖØÖÃ":
+        elif action == "reset" or action == "é‡ç½®":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/form/table[6]/tbody/tr[6]/td[2]/input[8]").click()
-    # ÓÃÓÚ²Ù×÷½è¿î¶ËÊ×Ò³¶¯×÷Ö´ĞĞ
+    # ç”¨äºæ“ä½œå€Ÿæ¬¾ç«¯é¦–é¡µåŠ¨ä½œæ‰§è¡Œ
     def DFristPageAction(self,action,status):
-        if action == "fristpage" or action == "Ê×Ò³" or action == "fp":
+        if action == "fristpage" or action == "é¦–é¡µ" or action == "fp":
             if status == "0":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[5]/a").click()
             elif status == "1":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[4]/a").click()
-        elif action == "borrow" or action == "½èµãÇ®" or action == "br":
+        elif action == "borrow" or action == "å€Ÿç‚¹é’±" or action == "br":
             if status == "0":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[4]/a").click()
             elif status == "1":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[3]/a").click()
-        elif action == "refund" or action == "»¹¿îÄÅ" or action == "rf":
+        elif action == "refund" or action == "è¿˜æ¬¾å‘" or action == "rf":
             if status == "0":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[3]/a").click()
             elif status == "1":
                 self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/a").click()
-        elif action == "login" or action == "µÇÂ¼" or action == "lg":
+        elif action == "login" or action == "ç™»å½•" or action == "lg":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/a").click()
-        elif action == "register" or action == "×¢²á" or action == "rs":
+        elif action == "register" or action == "æ³¨å†Œ" or action == "rs":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[1]/span/a/span").click()
-        elif action == "goinvest" or action == "ÇĞ»»Àí²Æ°æ" or action == "gi":
+        elif action == "goinvest" or action == "åˆ‡æ¢ç†è´¢ç‰ˆ" or action == "gi":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/div[2]/ul/li[1]/a").click()
-        elif action == "needmoney" or action == "ÎÒÒªÓÃÇ®" or action == "nd":
+        elif action == "needmoney" or action == "æˆ‘è¦ç”¨é’±" or action == "nd":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/a/span").click()
-        elif action == "easyrepay" or action == "¿ì½İ»¹¿î" or action == "er":
+        elif action == "easyrepay" or action == "å¿«æ·è¿˜æ¬¾" or action == "er":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[3]/a/span").click()
         elif action == "downloadiphone" or action == "iphone":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[4]/a/img").click()
         elif action == "downloadandroid" or  action == "android":
             self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[5]/a/img").click()
-    # ÓÃÓÚ²Ù×÷µÇÂ¼¶¯×÷£¨°üº¬½è¿î¶Ëµ¯´°µÇÂ¼¡¢Ò³ÃæÌø×ªµÇÂ¼¡¢Àí²Æ¶Ëµ¯³öµÇÂ¼¡¢Ò³ÃæÌø×ªµÇÂ¼£©
+    # ç”¨äºæ“ä½œç™»å½•åŠ¨ä½œï¼ˆåŒ…å«å€Ÿæ¬¾ç«¯å¼¹çª—ç™»å½•ã€é¡µé¢è·³è½¬ç™»å½•ã€ç†è´¢ç«¯å¼¹å‡ºç™»å½•ã€é¡µé¢è·³è½¬ç™»å½•ï¼‰
     def FristWinLogin(self,user,pwd,method):
         self.driver.find_element_by_id("login-email-address").send_keys(user)
         self.driver.find_element_by_id("login-password").send_keys(pwd)
@@ -983,28 +983,28 @@ class SysXSAdmin(object):
             self.driver.find_element_by_id("ajax-login-submit").click()
         elif method == "1":
             self.driver.find_element_by_id("user-login-submit").click()
-    # ÓÃÓÚ²Ù×÷½è¿î¶ËÓÃ»§²Ëµ¥¶¯×÷
+    # ç”¨äºæ“ä½œå€Ÿæ¬¾ç«¯ç”¨æˆ·èœå•åŠ¨ä½œ
     def UserMenu(self,action):
         menu = self.driver.find_element_by_xpath\
             ("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/div[2]/ul/li[1]")
         ActionChains.move_to_element(menu).perform()
-        if action == "mypage" or action == "ÎÒµÄÖ÷Ò³":
+        if action == "mypage" or action == "æˆ‘çš„ä¸»é¡µ":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/div[2]/ul/li[2]/a")\
                 .click()
-        elif action == "borrow" or action == "ÎÒÒª½è¿î":
+        elif action == "borrow" or action == "æˆ‘è¦å€Ÿæ¬¾":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/div[2]/ul/li[3]/a")\
                 .click()
-        elif action == "account" or action == "¸öÈËÉèÖÃ":
+        elif action == "account" or action == "ä¸ªäººè®¾ç½®":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/div[2]/ul/li[4]/a")\
                 .click()
-        elif action == "loginout" or action == "ÍË³öµÇÂ¼":
+        elif action == "loginout" or action == "é€€å‡ºç™»å½•":
             self.driver.find_element_by_xpath\
                 ("/html/body/div[1]/div[2]/div/div[2]/ul/li[2]/div[2]/ul/li[5]/a")\
                 .click()
-    # ÓÃÓÚ²Ù×÷½è¿îÀàĞÍÑ¡Ôñ
+    # ç”¨äºæ“ä½œå€Ÿæ¬¾ç±»å‹é€‰æ‹©
     def Borrow(self,type):
         if type == "25":
             self.driver.find_element_by_xpath\
@@ -1014,7 +1014,7 @@ class SysXSAdmin(object):
             self.driver.find_element_by_xpath\
                 ("/html/body/div[2]/div[2]/div/div/ul/li[2]/div[3]/a").click()
             time.sleep(2)
-    # ÓÃÓÚ²Ù×÷´û¿îÏêÇéÒ³¶¯×÷
+    # ç”¨äºæ“ä½œè´·æ¬¾è¯¦æƒ…é¡µåŠ¨ä½œ
     def BorrowStepone(self,money,repaytime,QQ,describe,status,type):
         self.driver.find_element_by_class_name("lh30")
         self.driver.find_element_by_id("borrowamount").send_keys(money)
@@ -1034,11 +1034,11 @@ class SysXSAdmin(object):
                 ("/html/body/div[3]/div[4]/div/form/div[1]/div[9]/div/dl/dd/a[4]").click()
         self.driver.find_element_by_id("borrowQQ").send_keys(QQ)
         self.driver.find_element_by_class_name("ke-edit-iframe").send_keys(describe)
-        if status == "save" or status == "±£´æ":
+        if status == "save" or status == "ä¿å­˜":
             self.driver.find_element_by_id("saveBtn").click()
-        elif status == "publish" or status == "Ìá½»ÉóºË":
+        elif status == "publish" or status == "æäº¤å®¡æ ¸":
             self.driver.find_element_by_id("publishBnt").click()
             self.driver.switch_to_alert().accept()
-        elif status == "preview" or status == "Ô¤ÀÀ":
+        elif status == "preview" or status == "é¢„è§ˆ":
             self.driver.find_element_by_id("previewBtn").click()
 

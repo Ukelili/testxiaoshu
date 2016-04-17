@@ -1,39 +1,34 @@
-# coding: gb2312
+# coding: utf-8
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from sysxsaction import SysXSAdmin
-from HTMLTestRunner import HTMLTestRunner
-import unittest
-import time,os
-
-
-class element():
-    __name = ""
-    def __init__(self,name):
-        self.__name = name
-    def TestCase(self):
-        implement = SysXSAdmin()
-        implement.UrlOpen(url="http://test.xiaoshushidai.com")
-        implement.DFristPageAction(action="½èµãÇ®",status="0")
-        implement.FristWinLogin(user="testjoin",pwd="a12345678",method="1")
-        time.sleep(2)
-        implement.Borrow(type="25")
-        implement.BorrowStepone(money="5000",repaytime="9",QQ="1",describe="testtesttesttesttesttest",status="Ìá½»ÉóºË",type="25")
-        time.sleep(10)
-        implement.Quitbrow()
+import HTMLTestRunner
+import time,os,unittest,re,io
 
 # TestCase()
+class XiaoShu(unittest.TestCase):
+    def setUp(self):
+        self = SysXSAdmin()
+        self.UrlOpen(url="http://test.xiaoshushidai.com")
+        self.DFristPageAction(action="å€Ÿç‚¹é’±",status="0")
+        self.FristWinLogin(user="testjoin",pwd="a12345678",method="1")
+        time.sleep(2)
+        self.Borrow(type="25")
+        self.BorrowStepone(money="5000",repaytime="9",QQ="1",describe="testtesttesttesttesttest",status="æäº¤å®¡æ ¸",type="25")
+        time.sleep(10)
+
+    def tearDown(self):
+        self.Quitbrow()
+        # self.assertEqual([],self.v)
 
 
-if __name__ == '__init__':
-    testunit = unittest.TestSuite()   #¶¨ÒåÒ»¸öµ¥Ôª²âÊÔÈİÆ÷
-    testunit.addTest(element("TestCase"))  #½«²âÊÔÓÃÀı¼ÓÈëµ½²âÊÔÈİÆ÷ÖĞ
-    # testunit.addTest("TestCase")
-    #testunit.addTest(element("test_search"))
+if __name__ == "__main__":
+    testunit = unittest.TestSuite()   #å®šä¹‰ä¸€ä¸ªå•å…ƒæµ‹è¯•å®¹å™¨
+    testunit.addTest(XiaoShu("setUp"))  #å°†æµ‹è¯•ç”¨ä¾‹åŠ å…¥åˆ°æµ‹è¯•å®¹å™¨ä¸­
+    filename = './PycharmProjects/test.html' #å®šä¹‰ä¸ªæŠ¥å‘Šå­˜æ”¾è·¯å¾„ï¼Œæ”¯æŒç›¸å¯¹è·¯å¾„ã€‚
 
-    filename="C:/Users/Administrator/PycharmProjects/testxiaoshu/Test.html"  #¶¨Òå¸ö±¨¸æ´æ·ÅÂ·¾¶£¬Ö§³ÖÏà¶ÔÂ·¾¶¡£
-    fp=file(filename,'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='Report_title',description='Report_description')  #Ê¹ÓÃHTMLTestRunnerÅäÖÃ²ÎÊı£¬Êä³ö±¨¸æÂ·¾¶¡¢±¨¸æ±êÌâ¡¢ÃèÊö
-    runner.run(testunit) #×Ô¶¯½øĞĞ²âÊÔ
+    fp = file(filename,'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'å€Ÿæ¬¾ç”³è¯·æµ‹è¯•æŠ¥å‘Š',description=u'ç”¨ä¾‹æ‰§è¡Œæƒ…å†µï¼š')  #ä½¿ç”¨HTMLTestRunneré…ç½®å‚æ•°ï¼Œè¾“å‡ºæŠ¥å‘Šè·¯å¾„ã€æŠ¥å‘Šæ ‡é¢˜ã€æè¿°
+    runner.run(testunit) #è‡ªåŠ¨è¿›è¡Œæµ‹è¯•

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: gb2312 -*-
 import os
 import urllib
 from PIL import Image
@@ -7,21 +7,21 @@ from pytesser import *
 from pytesseract import *
 
 
-# ä¸‹è½½æ ·æœ¬å›¾ç‰‡
+# ÏÂÔØÑù±¾Í¼Æ¬
 for i in range(1):
-    url = 'http://test.xiaoshushidai.com/verify.php' # éªŒè¯ç çš„åœ°å€
+    url = 'http://test.xiaoshushidai.com/verify.php' # ÑéÖ¤ÂëµÄµØÖ·
     print "download", i
     file("./pic/%04d.gif" % i, "wb").write(urllib.urlopen(url).read())
-'''æ–¹æ³•ä¸€ï¼š'''
-# å›¾åƒäºŒå€¼å¤„ç†
+'''·½·¨Ò»£º'''
+# Í¼Ïñ¶şÖµ´¦Àí
 dir="./pic/"
 path = "./font/"
 for f in os.listdir(dir):
     if f.endswith(".gif"):
-        img = Image.open(dir+f) # è¯»å…¥å›¾ç‰‡
+        img = Image.open(dir+f) # ¶ÁÈëÍ¼Æ¬
         img = img.convert("RGBA")
         pixdata = img.load()
-        # äºŒå€¼åŒ–
+        # ¶şÖµ»¯
         for y in xrange(img.size[1]):
             for x in xrange(img.size[0]):
                 if pixdata[x, y][0] < 90:
@@ -37,24 +37,24 @@ for f in os.listdir(dir):
         img.save(path+f, "GIF")
 
 
-# å›¾åƒåˆ†å‰²
+# Í¼Ïñ·Ö¸î
 j = 0
 dir="./font/"
 for f in os.listdir(dir):
     if f.endswith(".gif"):
         img = Image.open(dir+f)
         for i in range(4):
-            x = 16 + i*15   # è¿™é‡Œçš„æ•°å­—å‚æ•°éœ€è¦è‡ªå·±
-            y = 2           # æ ¹æ®éªŒè¯ç å›¾ç‰‡çš„åƒç´ è¿›è¡Œ
-            img.crop((x, y, x+7, y+10)).save("fonts/%d.gif" % j)   # é€‚å½“çš„ä¿®æ”¹
+            x = 4 + i*10   # ÕâÀïµÄÊı×Ö²ÎÊıĞèÒª×Ô¼º
+            y = 6           # ¸ù¾İÑéÖ¤ÂëÍ¼Æ¬µÄÏñËØ½øĞĞ
+            img.crop((x, y, x+13, y+17)).save("fonts/%d.gif" % j)   # ÊÊµ±µÄĞŞ¸Ä
             print "j=",j
             j += 1
-# å›¾åƒçš„äºŒå€¼åŒ–å¤„ç†
+# Í¼ÏñµÄ¶şÖµ»¯´¦Àí
 def binary(f):
     print f
     img = Image.open(f)
     # img = img.convert('1')
-    img = img.convert("RGBA")  # å‚è€ƒæ–‡ç« ä¸­æ— è¯¥è¡Œï¼Œæ— è¯¥è¡Œï¼Œæˆ‘è¿™é‡Œä¼šæŠ¥é”™
+    img = img.convert("RGBA")  # ²Î¿¼ÎÄÕÂÖĞÎŞ¸ÃĞĞ£¬ÎŞ¸ÃĞĞ£¬ÎÒÕâÀï»á±¨´í
     pixdata = img.load()
     for y in xrange(img.size[1]):
         for x in xrange(img.size[0]):
@@ -68,22 +68,23 @@ def binary(f):
         for x in xrange(img.size[0]):
             if pixdata[x, y][2] > 0:
                 pixdata[x, y] = (255, 255, 255, 255)
+
     return img
 nume = 0
 
-# å›¾åƒçš„åˆ†å‰²ï¼Œå°±æ˜¯éªŒè¯ç æŒ‰å­—ç¬¦åˆ†å‰²å‡ºæ¥
+# Í¼ÏñµÄ·Ö¸î£¬¾ÍÊÇÑéÖ¤Âë°´×Ö·û·Ö¸î³öÀ´
 def division(img):
     global nume
     font=[]
     for i in range(4):
-        x=16+i*15		# è¯¥å‡½æ•°ä¸­çš„åƒç´ å€¼éƒ½éœ€è¦è‡ªå·±è¿›è¡Œå¾®è°ƒ
-        y=2
-        temp = img.crop((x,y,x+7,y+10))
+        x=4+i*10		# ¸Ãº¯ÊıÖĞµÄÏñËØÖµ¶¼ĞèÒª×Ô¼º½øĞĞÎ¢µ÷
+        y=5
+        temp = img.crop((x,y,x+13,y+17))
         temp.save("./temp/%d.gif" % nume)
         nume=nume+1
         font.append(temp)
     return font
-# åˆ†éš”å‡ºæ¥çš„å­—ç¬¦ä¸é¢„å…ˆå®šä¹‰çš„å­—ä½“åº“ä¸­çš„ç»“æœé€ä¸ªåƒç´ è¿›è¡Œå¯¹æ¯”æ‰¾å‡ºå·®åˆ«æœ€å°çš„é¡¹
+# ·Ö¸ô³öÀ´µÄ×Ö·ûÓëÔ¤ÏÈ¶¨ÒåµÄ×ÖÌå¿âÖĞµÄ½á¹ûÖğ¸öÏñËØ½øĞĞ¶Ô±ÈÕÒ³ö²î±ğ×îĞ¡µÄÏî
 def recognize(img):
     fontMods = []
     for i in range(1):
@@ -103,8 +104,9 @@ def recognize(img):
                         compare = 255
                     if mod[1].getpixel((xi, yi)) != compare:
                         diffs += 1
-            print "diffsï¼š" + str(diffs)
+            print "diffs£º" + str(diffs)
             points.append((diffs, mod[0]))
+
         points.sort()
         result += points[0][1]
     return result
@@ -118,11 +120,12 @@ if __name__ == '__main__':
             dir += (num+".gif")
             print "save to", dir
             img.save(dir)
-            text = image_to_string(img.save(dir))
-            print "text:"+text
+            images = Image.open("./result/0000.gif")
+            text = image_to_string(images)
+            print "text:" + text
 
 
 
-             #ä»¥ä¸‹å¤šè¡Œä¸ºè‡ªå·±ä¿®æ”¹ï¼Œå‚è€ƒæ–‡ç« ä¸­çš„å€¼å¯¹æ¯”å­˜åœ¨é—®é¢˜
+             #ÒÔÏÂ¶àĞĞÎª×Ô¼ºĞŞ¸Ä£¬²Î¿¼ÎÄÕÂÖĞµÄÖµ¶Ô±È´æÔÚÎÊÌâ
                     #print "mod[1].getpixel((xi, yi)):"+str(mod[1].getpixel((xi, yi)))
                     #print "target.getpixel((xi, yi)):"+str(target.getpixel((xi, yi)))

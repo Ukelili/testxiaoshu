@@ -1,9 +1,9 @@
-# coding: utf-8
+# coding: gb2312
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-from PIL import Image,ImageEnhance,ImageFilter
+from PIL import ImageEnhance,ImageFilter
 from pytesser import *
 from pytesseract import *
 import time,os,uuid,urllib2,cookielib,urllib,io,StringIO
@@ -35,7 +35,6 @@ def get_file(url):
         cj=cookielib.LWPCookieJar()
         opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
         urllib2.install_opener(opener)
-
         req=urllib2.Request(url)
         operate=opener.open(req)
         data=operate.read()

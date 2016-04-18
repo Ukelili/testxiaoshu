@@ -1,14 +1,13 @@
 #!/usr/bin/env python
-#-*- encoding: utf-8 -*-
-import sys
+#-*- encoding: gb2312
 import httplib2
 import HTMLParser
 def getPageContent(url):
     '''''
-    ä½¿ç”¨httplib2ç”¨ç¼–ç¨‹çš„æ–¹å¼æ ¹æ®urlè·å–ç½‘é¡µå†…å®¹
-    å°†byteså½¢å¼çš„å†…å®¹è½¬æ¢æˆutf-8çš„å­—ç¬¦ä¸²
+    Ê¹ÓÃhttplib2ÓÃ±à³ÌµÄ·½Ê½¸ù¾İurl»ñÈ¡ÍøÒ³ÄÚÈİ
+    ½«bytesĞÎÊ½µÄÄÚÈİ×ª»»³Éutf-8µÄ×Ö·û´®
     '''
-    #ä½¿ç”¨ie9çš„user-agentï¼Œå¦‚æœä¸è®¾ç½®user-agentå°†ä¼šå¾—åˆ°403ç¦æ­¢è®¿é—®
+    #Ê¹ÓÃie9µÄuser-agent£¬Èç¹û²»ÉèÖÃuser-agent½«»áµÃµ½403½ûÖ¹·ÃÎÊ
     headers={'user-agent':'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)',
             'cache-control':'no-cache'}
     if url:
@@ -61,18 +60,18 @@ class ParserOschinaNew(HTMLParser.HTMLParser):
             self.st.push('li')
         if (stack_size==3 and tag=='h3' ):
             self.st.push('h3')
-            text = 'åšå®¢æ ‡é¢˜ï¼š'.decode('utf-8').encode('gb2312','ignore')
+            text = '²©¿Í±êÌâ£º'.decode('utf-8').encode('gb2312','ignore')
             print '%s'%text
         if (stack_size==3 and tag=='p' ):
             self.st.push('p')
-            text = 'æ­£æ–‡éƒ¨åˆ†ï¼š'.decode('utf-8').encode('gb2312','ignore')
+            text = 'ÕıÎÄ²¿·Ö£º'.decode('utf-8').encode('gb2312','ignore')
             print '%s'%text
 
         if (stack_size==3 and tag=='div' ):
             for name,value in attrs:
                 if (name=='class' and value=='date'):
                     self.st.push('div')
-                    text = 'ä½œè€…ï¼š'.decode('utf-8').encode('gb2312','ignore')
+                    text = '×÷Õß£º'.decode('utf-8').encode('gb2312','ignore')
                     print '%s'%text
 
 
@@ -111,45 +110,45 @@ if __name__ == '__main__':
 import Tkinter
 import urllib
 import HTMLParser
-# ç¬¬äºŒä¸ªç¤ºä¾‹ç¨‹åºï¼šæ‰¾å›¾ç‰‡é“¾æ¥
-class MyHTMLParser(HTMLParser.HTMLParser):                                              # åˆ›å»ºHTMLè§£æç±»
+# µÚ¶ş¸öÊ¾Àı³ÌĞò£ºÕÒÍ¼Æ¬Á´½Ó
+class MyHTMLParser(HTMLParser.HTMLParser):                                              # ´´½¨HTML½âÎöÀà
         def __init__(self):
                 HTMLParser.HTMLParser.__init__(self)
-                self.gifs = []                                                          # åˆ›å»ºåˆ—è¡¨ï¼Œä¿å­˜gif
-                self.jpgs = []                                                          # åˆ›å»ºåˆ—è¡¨ï¼Œä¿å­˜jpg
-        def handle_starttag(self, tags, attrs):                                         # å¤„ç†èµ·å§‹æ ‡è®°
-                if tags == 'img':                                                       # å¤„ç†å›¾ç‰‡
+                self.gifs = []                                                          # ´´½¨ÁĞ±í£¬±£´ægif
+                self.jpgs = []                                                          # ´´½¨ÁĞ±í£¬±£´æjpg
+        def handle_starttag(self, tags, attrs):                                         # ´¦ÀíÆğÊ¼±ê¼Ç
+                if tags == 'img':                                                       # ´¦ÀíÍ¼Æ¬
                         for attr in attrs:
                                 for t in attr:
                                         if 'gif' in t:
-                                                self.gifs.append(t)                     # æ·»åŠ åˆ°gifåˆ—è¡¨
+                                                self.gifs.append(t)                     # Ìí¼Óµ½gifÁĞ±í
                                         elif 'jpg' in t:
-                                                self.jpgs.append(t)                     # æ·»åŠ åˆ°jpgåˆ—è¡¨
+                                                self.jpgs.append(t)                     # Ìí¼Óµ½jpgÁĞ±í
                                         else:
                                                 pass
-        def get_gifs(self):                                                             # è¿”å›gifåˆ—è¡¨
+        def get_gifs(self):                                                             # ·µ»ØgifÁĞ±í
                 return self.gifs
-        def get_jpgs(self):                                                             # è¿”å›jpgåˆ—è¡¨
+        def get_jpgs(self):                                                             # ·µ»ØjpgÁĞ±í
                 return self.jpgs
 class Window:
         def __init__(self, root):
-                self.root = root                                                        # åˆ›å»ºç»„ä»¶
-                self.label = Tkinter.Label(root, text = 'è¾“å…¥URL:')
+                self.root = root                                                        # ´´½¨×é¼ş
+                self.label = Tkinter.Label(root, text = 'ÊäÈëURL:')
                 self.label.place(x = 5, y = 15)
                 self.entryUrl = Tkinter.Entry(root,width = 30)
                 self.entryUrl.place(x = 65, y = 15)
                 self.get = Tkinter.Button(root,
-                                text = 'è·å–å›¾ç‰‡', command = self.Get)
+                                text = '»ñÈ¡Í¼Æ¬', command = self.Get)
                 self.get.place(x = 280, y = 15)
                 self.edit = Tkinter.Text(root,width = 470,height = 600)
                 self.edit.place(y = 50)
         def Get(self):
-                url = self.entryUrl.get()                                               # è·å–URL
-                page = urllib.urlopen(url)                                              # æ‰“å¼€URL
-                data = page.read()                                                      # è¯»å–URLå†…å®¹
-                parser = MyHTMLParser()                                                 # ç”Ÿæˆå®ä¾‹å¯¹è±¡
-                parser.feed(data)                                                       # å¤„ç†HTMLæ•°æ®
-                self.edit.insert(Tkinter.END, '====GIF====\n')                          # è¾“å‡ºæ•°æ®
+                url = self.entryUrl.get()                                               # »ñÈ¡URL
+                page = urllib.urlopen(url)                                              # ´ò¿ªURL
+                data = page.read()                                                      # ¶ÁÈ¡URLÄÚÈİ
+                parser = MyHTMLParser()                                                 # Éú³ÉÊµÀı¶ÔÏó
+                parser.feed(data)                                                       # ´¦ÀíHTMLÊı¾İ
+                self.edit.insert(Tkinter.END, '====GIF====\n')                          # Êä³öÊı¾İ
                 gifs = parser.get_gifs()
                 for gif in gifs:
                         self.edit.insert(Tkinter.END, gif + '\n')
@@ -175,18 +174,18 @@ class MyParser(HTMLParser.HTMLParser):
         HTMLParser.HTMLParser.__init__(self)
 
     def handle_starttag(self, tag, attrs):
-        # è¿™é‡Œé‡æ–°å®šä¹‰äº†å¤„ç†å¼€å§‹æ ‡ç­¾çš„å‡½æ•°
+        # ÕâÀïÖØĞÂ¶¨ÒåÁË´¦Àí¿ªÊ¼±êÇ©µÄº¯Êı
         if tag == 'a':
-            # åˆ¤æ–­æ ‡ç­¾<a>çš„å±æ€§
+            # ÅĞ¶Ï±êÇ©<a>µÄÊôĞÔ
             for name,value in attrs:
                 if name == 'href':
                     print value
 
 
 if __name__ == '__main__':
-    a = '<html><head><title>test</title><body><a href="http://test.xiaoshushidai.com">æŠ¢å…ˆè´·</a></body></html>'
+    a = '<html><head><title>test</title><body><a href="http://test.xiaoshushidai.com">ÇÀÏÈ´û</a></body></html>'
 
     my = MyParser()
-    # ä¼ å…¥è¦åˆ†æçš„æ•°æ®ï¼Œæ˜¯htmlçš„ã€‚
+    # ´«ÈëÒª·ÖÎöµÄÊı¾İ£¬ÊÇhtmlµÄ¡£
     my.feed(a)
 '''

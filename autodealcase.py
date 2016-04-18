@@ -1,4 +1,4 @@
-# coding: utf-8
+# coding: gb2312
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys

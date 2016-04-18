@@ -1,4 +1,4 @@
-# coding: utf-8
+# coding: gb2312
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
@@ -12,7 +12,7 @@ class XiaoShu(unittest.TestCase):
     def setUp(self):
         self = SysXSAdmin()
         self.UrlOpen(url="http://test.xiaoshushidai.com")
-        self.DFristPageAction(action="å€Ÿç‚¹é’±",status="0")
+        self.DFristPageAction(action="???¹é??",status="0")
         self.FristWinLogin(user="testjoin",pwd="a12345678",method="1")
         time.sleep(2)
         self.Borrow(type="25")
@@ -20,7 +20,7 @@ class XiaoShu(unittest.TestCase):
                            repaytime="9",
                            QQ="1",
                            describe="testtesttesttesttesttest",
-                           status="æäº¤å®¡æ ¸"
+                           status="??äº¤å?¡æ??"
                            ,type="25")
         # time.sleep(10)
         self.Quitbrow()
@@ -29,15 +29,15 @@ class XiaoShu(unittest.TestCase):
         # self.assertEqual([],self.v)
 
 if __name__ == "__main__":
-    # å®šä¹‰ä¸€ä¸ªå•å…ƒæµ‹è¯•å®¹å™¨
+    # å®?ä¹?ä¸?ä¸?????æµ?è¯?å®¹å??
     testunit = unittest.TestSuite()
-    testunit.addTest(XiaoShu("setUp"))  #å°†æµ‹è¯•ç”¨ä¾‹åŠ å…¥åˆ°æµ‹è¯•å®¹å™¨ä¸­
-    # å–å‰é¢æ—¶é—´
+    testunit.addTest(XiaoShu("setUp"))  #å°?æµ?è¯??¨ä????¥å?°æ?è¯?å®¹å?¨ä¸­
+    # ?????¢æ?¶é??
     now = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime(time.time()))
-    # å®šä¹‰ä¸ªæŠ¥å‘Šå­˜æ”¾è·¯å¾„ï¼Œæ”¯æŒç›¸å¯¹è·¯å¾„ã€‚
+    # å®?ä¹?ä¸??¥å??å­??¾è·¯å¾?ï¼??????¸å?¹è·¯å¾???
     filename = "./TestReport/"+now+'_TestReport.html'
     fp = file(filename,'wb')
-    # ä½¿ç”¨HTMLTestRunneré…ç½®å‚æ•°ï¼Œè¾“å‡ºæŠ¥å‘Šè·¯å¾„ã€æŠ¥å‘Šæ ‡é¢˜ã€æè¿°
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'å€Ÿæ¬¾ç”³è¯·æµ‹è¯•æŠ¥å‘Š',description=u'ç”¨ä¾‹æ‰§è¡Œæƒ…å†µï¼š')
-    # è‡ªåŠ¨è¿›è¡Œæµ‹è¯•
+    # ä½¿ç??HTMLTestRunner??ç½????°ï?è¾??ºæ?¥å??è·?å¾????¥å????é¢?????è¿?
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'??æ¬¾ç?³è?·æ?è¯??¥å??',description=u'?¨ä??§è????µï?')
+    # ???¨è?è¡?æµ?è¯?
     runner.run(testunit)
